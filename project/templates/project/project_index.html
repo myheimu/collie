@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <a href="/project/index" title="Go to Projects" class="tip-bottom"><i class="icon-home"></i> Projects</a>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_index.js"></script>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span10">
+            </div>
+            <div class="span2">
+                <!-- id="create-project"  -->
+                <a class="btn btn-success" style="margin-bottom: 10px" data-toggle="modal" data-target="#createProjectModal">Create Project</a>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-th"></i></span>
+                        <h5>Projects</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered data-table ">
+                            <thead>
+                                <tr>
+                                    <th>Name (Scheduled)</th>
+                                    <th>Id</th>
+                                    <th>Latest Version</th>
+                                    <th>Modified By</th>
+                                    <th>Modified Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for project in project_list %}
+                                <tr class="gradeA">
+                                    <td>
+                                        <a href="/project/manage?project_id={{ project.project_id }}&version_id={{ project.project_version }}">
+                                            {{ project.project_name }}
+                                            {% if project.scheduled > 0 %}
+                                                <span class="badge badge-info">{{ project.scheduled }}</span>
+                                            {% endif %}
+                                        </a>
+                                    </td>
+                                    <td>{{ project.project_id }}</td>
+                                    <td>{{ project.project_version }}</td>
+                                    <td>{{ project.upload_user }}</td>
+                                    <td>{{ project.upload_time }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="createProjectModal" tabindex="-1" role="dialog" style="width: 400px; display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Create Project</h4>
+                </div>
+                <div class="modal-body" style="max-height: 1500px; overflow: hidden;">
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label" style="width: 80px;">Name</label>
+                            <div class="controls" style="margin-left: 100px;">
+                                <input type="text" value="" class="input-big" id="project_name">
+                                <span class="help-block">Project Name</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="btn_close">Close</button>
+                    <button type="button" class="btn btn-primary" id="btn_create_project">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

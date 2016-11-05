@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{{ STATIC_URL }}matrix-admin/js/jquery.min.js"></script>
+    <!-- <script src="{{ STATIC_URL }}matrix-admin/js/bootstrap.min.js"></script> -->
+    <script src="{{ STATIC_URL }}js/table/table_create.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}matrix-admin/font-awesome/css/font-awesome.css"/>
+    <!-- <link rel="stylesheet" href="{{ STATIC_URL }}matrix-admin/css/bootstrap.min.css"/> -->
+    <style type="text/css">
+        body {
+            font-family: arial, sans-serif;
+        }
+
+        .file-browser {
+            overflow-x: scroll;
+            height: 400px;
+            border: 1px solid #f0f0f0;
+            display: block;
+            position: relative
+        }
+
+        .folder {
+            width: 200px;
+            height: 385px;
+            overflow: auto;
+            display: block;
+            position: absolute;
+            border-right: 1px solid #f0f0f0;
+        }
+
+        .folder ul {
+            padding-left: 0px;
+        }
+
+        .item-folder.active {
+            background-color: #B3B3B3;
+        }
+
+    </style>
+    <title></title>
+</head>
+<body>
+
+<!-- File browser -->
+<div style="height: 32px">
+    <label style="vertical-align: middle; font-size: 20px">File browser</label>
+    <label id="progress" style="color: green; font-size: 12px">loading...</label>
+</div>
+<div class="container-fluid file-browser">
+    <div class="folder" style="display: none" depth="" path="" id="folder_temp">
+    <ul>
+        <li class="item-folder" id="item_folder_temp" style="display: none" name="">
+            <span class="icon-folder-close"></span>
+            <label class="name"></label>
+        </li>
+        <li class="item-file" id="item_file_temp" style="display: none" name="">
+            <span class="icon-file"></span>
+            <label class="name"></label>
+        </li>
+    </ul>
+    </div>
+</div>
+<!-- preview button -->
+<div>
+    <button id="preview_btn">Preview</button>
+</div>
+
+<div style="margin: 10px"></div>
+
+<!-- Table Details -->
+<div>
+    <label style="vertical-align: middle; font-size: 20px">Table Details</label>
+    <table>
+        <tbody>
+            <tr>
+                <td>Table name</td>
+                <td>
+                    <input>
+                </td>
+            </tr>
+            <tr>
+                <td>File format</td>
+                <td>
+                    <select>
+                        <option>Text File</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Column Delimiter</td>
+                <td>
+                    <input value="json" id="column_delimiter">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <label id="progress" style="color: green; font-size: 12px">Loading table preview...</label>
+    <lable id="table_preview_hint"></lable>
+</div>
+<div class="container-fluid">
+    <!-- name, format, delimiter, is_partitioned -->
+    <!-- column name, column type -->
+    <!-- create button -->
+    <table id="preview_table">
+        <thead>
+        <tr id="tr_column_names">
+            <td id="table_column_name_temp" style="display: none">
+                <input value="id">
+            </td>
+        </tr>
+        <tr id="tr_column_types">
+            <td id="table_column_type_temp" style="display: none">
+                <select>
+                    <option value="STRING">STRING</option>
+                    <option value="INT">INT</option>
+                    <option value="TIMESTAMP">TIMESTAMP</option>
+                </select>
+            </td>
+        </tr>
+        </thead>
+        <tbody id="table_body">
+        <tr id="table_row_temp" style="display: none">
+            <td id="table_row_cell_temp" style="display: none"></td>
+            <!--
+            <td>25</td>
+            <td>Austin</td>
+            -->
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <button>Create Table</button>
+</div>
+</body>
+</html>

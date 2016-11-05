@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block header %}
+    <a href="/project/scheduled/index" title="Go to Scheduled" class="tip-bottom"><i class="icon-tasks"></i> Scheduled</a>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_scheduled.js"></script>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span9">
+                <h4><strong>Scheduled Flows</strong></h4>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                      <h5></h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered data-table ">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Flow</th>
+                                <th>Project</th>
+                                <th>Submitted By</th>
+                                <th>First Scheduled to Run</th>
+                                <th>Next Execution Time</th>
+                                <th>Repeats Every</th>
+                                <th>Status</th>
+                                <th>Has SLA</th>
+                                <th>Action</th>
+                                <!-- TODO
+                                <th colspan="2">Action</th>
+                                -->
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for scheduled_item in scheduled_items %}
+                            <tr class="gradeA">
+                                <td>{{ scheduled_item.id }}</td>
+                                <td>
+                                    <a href="/project/flow/index?project_id={{ scheduled_item.project_id }}&version_id={{ scheduled_item.project_version }}&job_id={{ scheduled_item.flow_id }}">
+                                        {{ scheduled_item.flow_name }}
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="/project/manage?project_id={{ scheduled_item.project_id }}&version_id={{ scheduled_item.project_version }}">
+                                        {{ scheduled_item.project_name }}
+                                    </a>
+                                </td>
+                                <td>{{ scheduled_item.submitted_user }}</td>
+                                <td>{{ scheduled_item.first_scheduled_run }}</td>
+                                <td>{{ scheduled_item.next_execution_time }}</td>
+                                <td>{{ scheduled_item.repeats_every }}</td>
+                                <td>
+                                    <span class="badge {{ scheduled_item.badge_class }}">
+                                        {{ scheduled_item.status }}
+                                    </span>
+                                </td>
+                                <td>{{ scheduled_item.has_sla }}</td>
+                                <td><button class="btn btn-danger btn-mini schedule_delete" scheduled_id="{{ scheduled_item.id }}">Delete Schedule</button></td>
+                                <!-- TODO
+                                <td><button class="btn btn-default btn-mini">Set SLA</button></td>
+                                -->
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+              </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+			<h3>{{::table.name}}<a class="btn btn-success pull-right" href="#/">管理表</a></h3>
+			<hr>
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th>产品线</th>
+						<th>数据描述</th>
+						<th>数据质量</th>
+						<th>周期</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{::table.service_name}}</td>
+						<td>{{::table.comment}}</td>
+						<td><span class="label label-warning">Unknow</span></td>
+						<td>60分钟</td>
+					</tr>
+				</tbody>
+			</table>
+			<p><button class="btn btn-success">Query 一下</button></p>
+			<table class="table table-hover table-striped">
+				<thead>
+					<tr>
+						<th>字段名</th>
+						<th>字段说明</th>
+						<th>数据样例</th>
+						<th>字段类型</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="column in table.columns">
+						<td>{{::column.name}}</td>
+						<td>{{::column.tag}}</td>
+						<td>{{::column.sample}}</td>
+						<td>{{::column.type}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

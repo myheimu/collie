@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/diagram.js"></script>
+    <script src="{{ STATIC_URL }}js/project/project_flow_execution.js"></script>
+    <script src="{{ STATIC_URL }}js/project/project_execute.js"></script>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_flow_execution.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/diagram.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_execute.css" />
+{% endblock %}
+
+{% block header %}
+    <a href="/project/index" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Projects</a>
+    <a href="/project/manage?project_id={{ project_id }}&version_id={{ project_version }}">Manage</a>
+    <a href="/project/flow/index?project_id={{ project_id }}&version_id={{ project_version }}&job_id={{ flow_id }}">Flow</a>
+    <a href="#">Execution</a>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid main_panel" execution_id="{{ execution_id }}" project_id="{{ project_id }}" project_version="{{ project_version }}" flow_id="{{ flow_id }}">
+        <div class="row-fluid">
+            <div class="span8">
+                <h4><strong>Flow </strong>{{ flow_name }}</h4>
+                <h5><strong>Project </strong> {{ project_name }}</h5>
+            </div>
+            <div class="span4">
+                <button class="btn btn-info" id="btn_execution_rerun" style="margin-left: 10px; display: none">Rerun</button>
+                <button class="btn btn-primary" id="btn_execution_pause" style="margin-left: 10px; display: none">Pause</button>
+                <button class="btn btn-danger" id="btn_execution_cancel" style="margin-left: 10px; display: none">Cancel</button>
+                <button class="btn btn-default" id="btn_execution_resume" style="margin-left: 10px; display: none">Resume</button>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+
+            <div class="span12">
+                <div class="widget-box">
+                  <div class="widget-title">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#tab1">Graph</a></li>
+                        <li><a data-toggle="tab" href="#tab2">Job List</a></li>
+                        <li><a data-toggle="tab" href="#tab3">Flow Log</a></li>
+                    </ul>
+                  </div>
+                  <div class="widget-content tab-content">
+                    <div id="tab1" class="tab-pane active">
+                        <div class="diagram_panel" id="flow_diagram_panel">
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab-pane">
+                        <table class="table table-bordered data-table">
+                          <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Timeline</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Elapsed</th>
+                                <th>Status</th>
+                                <th>Logs</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              {% for job in execution_jos %}
+                              <tr class="gradeA">
+                                  <td>
+                                      <a href="">{{ job.job_name }}</a>
+                                  </td>
+                                  <td>
+                                      <div class="progress progress-success" style="margin-bottom: 0px;">
+                                          <div style="width: {{ job.timeline_width }}; margin-left: {{ job.timeline_margin_left }}" class="bar"></div>
+                                      </div>
+                                  </td>
+                                  <td>{{ job.start_time }}</td>
+                                  <td>{{ job.end_time }}</td>
+                                  <td>{{ job.elapsed }}</td>
+                                  <td><span class="{{ job.badge_class }} badge block">{{ job.status }}</span></td>
+                                  <td><a href="/project/execution/job/index?execution_id={{ execution_id }}&job_id={{ job.job_id }}">Log</a></td>
+                              </tr>
+                              {% endfor %}
+                          </tbody>
+                        </table>
+                    </div>
+                    <div id="tab3" class="tab-pane">
+                        <button class="btn btn-default" id="log_refresh">Refresh</button>
+                        <hr style="margin: 10px"/>
+                        <textarea class="span12 log_panel" rows="40" readonly="readonly" log_offset="{{ log_offset }}">{{ log_data }}</textarea>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'project/project_execute.html' %}
+{% endblock %}

@@ -1,0 +1,71 @@
+.navbar .profile_nav {
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-top: -38px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.navbar .profile_nav li {
+    width: 25%;
+    text-align: center;
+}
+
+.navbar .profile_nav li a .text {
+    padding: 10px;
+}
+
+#content-header {
+    display: none;
+}
+
+#content {
+    background-color: #FFFFFF;
+}
+
+.profile_panel {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.split_line {
+    margin-top: 20px;
+    border-top-color: #EEEEEE
+}
+
+.form-horizontal .control-group {
+    border-bottom: 0px;
+}
+
+.form-horizontal .input-big {
+    width: 300px;
+}
+
+.profile_list, .recent-comments, .recent-users {
+        margin: 0;
+        padding: 0;
+}
+
+.profile_list li, .recent-comments li, .article-post li, .recent-users li {
+        border-bottom: 1px dotted #AEBDC8;
+        list-style: none outside none;
+        padding: 10px;
+}
+
+.profile_list li.viewall, .recent-comments li.viewall, .recent-users li.viewall {
+        padding: 0;
+}
+
+.profile_list li.viewall a, .recent-comments li.viewall a, .recent-users li.viewall a {
+        padding: 5px;
+        text-align: center;
+        display: block;
+        color: #888888;
+}
+
+.profile_list li.viewall a:hover, .recent-comments li.viewall a:hover, .recent-users li.viewall a:hover {
+        background-color: #eeeeee;
+}
+
+.profile_list li:last-child, .recent-comments li:last-child, .recent-users li:last-child {
+        border-bottom: none !important;
+}

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+			<form ng-submit="createTable()">
+				<h3>创建新表<button class="btn btn-primary pull-right" type="submit">完成</button></h3>
+				<hr>
+				<div class="panel panel-default">
+					<div class="panel-heading">表说明</div>
+					<div class="panel-body">
+						<div class="form-group"><label>表名</label><input class="form-control" required placeholder="请输入全路径" type="text" ng-model="table.name"></div>
+						<div class="form-group"><label>表描述</label><input class="form-control" required placeholder="不可为空" type="text" ng-model="table.comment"></div>
+					</div>
+				</div>
+				<div class="panel panel-default">
+					<div class="panel-heading">字段说明</div>
+					<div class="panel-body">
+						<table class="table table-bordered table-hover table-striped">
+							<thead>
+								<tr>
+									<th>Tag</th>
+									<th>字段名</th>
+									<th>字段说明</th>
+									<th>字段类型</th>
+									<th>Partition</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="field in table.columns">
+									<td><input type="text" class="form-control" required placeholder="不可为空" ng-model="field.tag"></td>
+									<td><input type="text" class="form-control" required placeholder="不可为空" ng-model="field.name"></td>
+									<td><input type="text" class="form-control" required placeholder="不可为空" ng-model="field.comment"></td>
+									<td><select ng-model="field.type" class="form-control" required ng-options="type as type for type in fieldTypes">
+										<option value="">请选择</option>
+									</select></td>
+									<td class="abs-center"><input type="checkbox" class="" ng-model="field.is_partition" ng-init="field.is_partition=false"></td>
+								</tr>
+							</tbody>
+						</table>
+						<p>
+							<input type="button" class="btn btn-default pull-right" ng-click="table.columns.pop()" value="移除末项">
+							<input type="button" class="btn btn-success pull-right mr10" ng-click="table.columns.push({})" value="插入字段">
+						</p>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+			<pre>{{table|json}}</pre>
+		</div>
+	</div>
+</div>

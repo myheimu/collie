@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% block header %}
+    <a href="/project/executing/index" title="Go to Scheduled" class="tip-bottom"><i class="icon-tasks"></i> Executing</a>
+{% endblock %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_executing.js"></script>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span9">
+                <h4><strong>Executing Flows</strong></h4>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                      <h5></h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered data-table ">
+                            <thead>
+                                <tr>
+                                    <th>Execution Id</th>
+                                    <th>Flow</th>
+                                    <th>Project</th>
+                                    <th>User</th>
+                                    <th>Proxy User</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Elapsed</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for executing_item in executing_list %}
+                                <tr class="gradeA">
+                                    <td>
+                                        <a href="/project/execution/index?execution_id={{ executing_item.id }}">
+                                            {{ executing_item.id }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/project/flow/index?project_id={{ executing_item.project_id }}&version_id={{ executing_item.project_version }}&job_id={{ executing_item.flow_id }}">
+                                            {{ executing_item.flow }}
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="/project/manage?project_id={{ executing_item.project_id }}&version_id={{ executing_item.project_version }}">
+                                            {{ executing_item.project }}
+                                        </a>
+                                    </td>
+                                    <td>{{ executing_item.user }}</td>
+                                    <td>{{ executing_item.proxy_user }}</td>
+                                    <td>{{ executing_item.start_time }}</td>
+                                    <td>-</td>
+                                    <td>-</td>
+                                    <td><span class="badge badge-info">Running</span></td>
+                                    <td></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        </div>
+                    </div>
+              </div>
+        </div>
+    </div>
+{% endblock %}

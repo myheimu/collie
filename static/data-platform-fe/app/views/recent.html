@@ -1,0 +1,72 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+      <tabset>
+        <tab heading="存量日志">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>表名</th>
+                <th>部门</th>
+                <th>业务</th>
+                <th>业务负责人</th>
+                <th>日志负责人</th>
+                <th>日志描述</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="table in logTables | orderBy:'data_type'" ng-class="table.data_type=='log-data'?'warning':'info'">
+                <td>{{table.id}}</td>
+                <td><div class="ellipsis" title="{{table.name}}">{{table.name}}</div></td>
+                <td>{{table.department}}</td>
+                <td>{{table.service}}</td>
+                <td><div class="ellipsis" title="{{table.service_supervisor}}">{{table.service_supervisor | emailName}}</div></td>
+                <td><div class="ellipsis" title="{{table.supervisor}}">{{table.supervisor | emailName}}</div></td>
+                <td><div class="ellipsis" title="{{table.description}}">{{table.description}}</div></td>
+                <td><a href="#/log-table/{{table.id}}" class="btn btn-default btn-xs">查看表</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </tab>
+        <tab heading="最近访问过的表">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>业务名</th>
+                <th>表名</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="table in recentTables">
+                <td>{{table.service_name}}</td>
+                <td>{{table.table_name}}</td>
+                <td><a href="#/table/{{table.service_id}}" class="btn btn-default btn-xs">查看表</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </tab>
+        <tab heading="最近访问">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>业务名</th>
+                <th>表名</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="task in recentVisits">
+                <td>{{task.taskName}}</td>
+                <td>{{task.tableName}}</td>
+                <td><a href="#/table/{{task.id}}" class="btn btn-default btn-xs">查看表</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_flow_execution_job.js"></script>
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block header %}
+    <a href="/project/index" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Projects</a>
+    <a href="/project/manage?project_id={{ project_id }}&version_id={{ project_version }}">Manage</a>
+    <a href="/project/flow/index?project_id={{ project_id }}&version_id={{ project_version }}&job_id={{ flow_id }}">Flow</a>
+    <a href="/project/execution/index?execution_id={{ execution_id }}">Execution</a>
+    <a href="#">Job</a>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span8">
+                <!-- TODO display more details of this job -->
+                <h5><strong>Project</strong> {{ project_name }} > {{ flow_name }} > {{ job_name }}</h5>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+            <div id="log_panel" class="">
+                <button class="btn btn-default" id="log_refresh">Refresh</button>
+                <hr style="margin: 10px"/>
+                <textarea class="span12 log_panel" rows="40" readonly="readonly" log_offset="{{ log_offset }}">{{ log_data }}</textarea>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/diagram.js"></script>
+    <script src="{{ STATIC_URL }}js/project/project_execute.js"></script>
+    <script src="{{ STATIC_URL }}js/project/project_manage.js"></script>
+{% endblock %}
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/diagram.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_execute.css">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_manage.css">
+{% endblock %}
+{% block header %}
+    <a href="/project/index" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Projects</a>
+    <a href="#">Manage</a>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+          <div class="span12">
+            <div class="widget-box">
+              <div class="widget-title" data-toggle="collapse" href="#collapseG3">
+                  <span class="icon"> <i class="icon-info-sign"></i> </span>
+                  <h5 id="project_info" project_id="{{ project.id }}">Project</h5>
+              </div>
+              <div class="widget-content updates collapse in" id="collapseG3">
+                  <div class="row-fluid">
+                      <div class="span9">
+                          <table class="table table-striped">
+                              <tbody>
+                                <tr class="gradeX">
+                                    <td><strong>Name</strong></td>
+                                    <td>
+                                        <lable id="label_name">{{ project.name }}</lable>
+                                        {% ifequal project.role 'owner' %}
+                                            <input id="input_name" style="display: none">
+                                            <button class="btn btn-default btn-small" id="name_edit" style="margin-left: 5px">Edit</button>
+                                            <button class="btn btn-default btn-small" id="name_submit" style="margin-left: 5px; display: none">Submit</button>
+                                        {% endifequal %}
+                                    </td>
+                                    <td><strong>Your Role</strong></td>
+                                    <!--td>{{ project.permissions }}</td-->
+                                    <td>Owner</td>
+                                </tr>
+                                <tr class="gradeC">
+                                    <td><strong>Created Date</strong></td>
+                                    <td>{{ project.create_date }}</td>
+                                    <td><strong>Modified By</strong></td>
+                                    <td>{{ project.modify_by }}</td>
+                                </tr>
+                                <tr class="gradeA">
+                                    <td><strong>Modified Date</strong></td>
+                                    <td>{{ project.modify_date }}</td>
+                                    <td><strong>Latest Succeed Run Date</strong></td>
+                                    <td>{{ project.latest_success_date }}</td>
+                                </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      {% ifequal project.role 'owner' %}
+                      <div class="span2">
+                          <table class="table table-without-border">
+                              <tbody>
+                                <tr class="gradeX">
+                                  <td><button type="submit" class="btn btn-danger btn-block btn-mini" id="btn_delete_project">Delete Project</button></td>
+                                </tr>
+                                <!-- TODO
+                                <tr class="even gradeC">
+                                  <td><button type="submit" class="btn btn-primary btn-block btn-mini">Project Logs</button></td>
+                                </tr>
+                                <tr class="odd gradeA">
+                                  <td><button type="submit" class="btn btn-primary btn-block btn-mini">Permissions</button></td>
+                                </tr>
+                                -->
+                                <tr class="gradeA">
+                                  <td><button type="submit" class="btn btn-success btn-block btn-mini btn-view" id="view_update_btn">View / Update</button></td>
+                                </tr>
+                                <tr class="gradeA">
+                                  <td>
+                                      <button type="submit" class="btn btn-warning btn-block btn-mini btn-view" id="btn_edit_permission">
+                                          Edit Permission
+                                      </button>
+                                  </td>
+                                </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                      {% endifequal %}
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                      <span class="icon"> <i class="icon-info-sign"></i> </span>
+                      <h5>Flow Name</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <ul class="activity-list">
+                          {% for flow_root in flows_root %}
+                          <li class="flow-root" job_id="{{ flow_root.job_id }}" flow_root_job_id="{{ flow_root.job_id }}">
+                              <div class="row-fluid" style="margin: 5px">
+                                  <span class="icon-chevron-right"></span>
+                                  <a style="display: inline" href="/project/flow/index?project_id={{ project.id }}&version_id={{ project.version_id }}&job_id={{ flow_root.job_id }}">
+                                      {{ flow_root.name }}
+                                      {% if flow_root.has_scheduled %}
+                                          <span class="badge badge-info">
+                                              Has Scheduled
+                                          </span>
+                                      {% else %}
+                                      {% endif %}
+                                  </a>
+                                  <button class="btn btn-mini btn-success btn-run" style="width: 100px; visibility: hidden">Run</button>
+                              </div>
+                          </li>
+                          {% endfor %}
+                          <li id="leaf-template" style="display: none">
+                              <div class='row-fluid' style='margin: 5px'>
+                                  <span class='icon-tasks'></span>
+                                  <a style='display: inline' href='#' class=""></a>
+                                  <button class="btn btn-mini btn-success btn-run" style="width: 100px; visibility: hidden">Run</button>
+                              </div>
+                          </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'project/project_execute.html' %}
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block header %}
+    <a href="/project/history/index" title="Go to History" class="tip-bottom"><i class="icon-tasks"></i> History</a>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_history.css" />
+{% endblock %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_history.js"></script>
+    <script type="text/javascript">
+        var USERS_LIST_JSON_URL = '{% url "project:history_table" %}';
+        // translations for datatables
+        var oLanguages = {
+            oPaginate:{
+                sFirst:'First',
+                sLast: 'Last',
+                sNext: 'Next',
+                sPrevious: 'Previous'
+            },
+            sInfo:'{% trans "Showing _START_ to _END_ of _TOTAL_ entries" %}',
+            sInfoEmpty: '{% trans "No entries to show" %}',
+            sInfoFiltered: '{% trans "(filtered from _MAX_ total entries)" %}',
+            sLengthMenu:'{% trans "Show _MENU_ entries" %}',
+            sProcessing: '{% trans "Processing" %}',
+            sSearch: '{% trans "Filter records:" %}',
+            sZeroRecords: '{% trans "No data to show" %}'
+        };
+    </script>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span9">
+                <h4><strong>History</strong></h4>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title"> <span class="icon"> <i class="icon-th"></i> </span>
+                      <h5>History</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <!--table class="table table-bordered data-table " id="history_table"-->
+                        <table class="table table-bordered" id="history_table">
+                            <thead>
+                                <th>{% trans "ID" %}</th>
+                                <th>{% trans "Flow" %}</th>
+                                <th>{% trans "Project" %}</th>
+                                <th>{% trans "User" %}</th>
+                                <th>{% trans "Start Time" %}</th>
+                                <th>{% trans "End Time" %}</th>
+                                <th>{% trans "Elapsed" %}</th>
+                                <th>{% trans "Status" %}</th>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

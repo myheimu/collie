@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/profile.css">
+{% endblock %}
+
+{% block script %}
+    <!-- script src="{{ STATIC_URL }}js/project/project_index.js"></script -->
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid nopadding">
+
+        <!--top-Header-menu-->
+        <div id="" class="navbar">
+            <ul class="nav profile_nav">
+                <li>
+                    <a title="" href="/profile/index">
+                        <i class="icon icon-user"></i>
+                        <span class="text"> Account</span>
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="/profile/kerberos">
+                        <i class="icon icon-save"></i>
+                        <span class="text"> Kerberos</span>
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="/profile/groups">
+                        <i class="icon icon-group"></i>
+                        <span class="text"> Groups</span>
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="/profile/principal">
+                        <i class="icon icon-group"></i>
+                        <span class="text"> Kerberos Principal</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="profile_panel">
+            {% block profile_panel %}
+            {% endblock %}
+        </div>
+    </div>
+
+{% endblock %}

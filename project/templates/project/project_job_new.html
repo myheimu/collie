@@ -1,0 +1,58 @@
+<div class="modal fade" id="editJobModal" tabindex="-1" role="dialog" style="width: 650px; max-height: 800px; display: none" mode="">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="edit_mode">Add Job</h4>
+            </div>
+            <div class="modal-body" style="max-height: 450px; overflow-x: hidden; overflow-y: auto;">
+                <form class="form-horizontal" id="job_info" job_id="" job_original_name="">
+                    <div class="control-group">
+                        <label class="control-label">Job Name</label>
+                        <div class="controls">
+                            <input type="text" pattern="[0-9a-zA-Z_]+" value="" class="input-big" id="job_name">
+                            <label>name only contain 0-9 a-z A-Z _</label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Description</label>
+                        <div class="controls">
+                            <textarea class="form-control" rows="2" id="job_description" style="resize: none"></textarea>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Module</label>
+                        <div class="controls">
+                            <label id="module_name" module_id=""></label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Version</label>
+                        <div class="controls">
+                            <select id="version_select">
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group" id="options_group">
+                        <label class="control-label">options</label>
+                        <div class="controls controls-row">
+                            <div class="row-fluid" id="container-options">
+                                <div style="display: block" class="options_div">
+                                    <div class="option_assignment" style="display: none" id="option_assignment_temp">
+                                        <label class="option_name"></label><label class="option_category"></label>
+                                        <span class="icon"><i class="icon-arrow-right"></i></span>
+                                        <input type="text" class="input-big input_option" style="margin: 2px">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button submit" class="btn btn-primary" id="btn_job_save">Done</button>
+            </div>
+        </div>
+    </div>
+</div>

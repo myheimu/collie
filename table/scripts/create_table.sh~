@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# check variable value is not empty
+set -u
+# check each command return code is correct
+set -e
+
+while test $# -gt 0; do
+  case "$1" in 
+    -h|--help)
+      
+    -p|--project-path)
+
+done
+project_path=$0
+service_name=$1
+table_name=$2
+file_content=$3
+
+# save thrift file
+pushd $project_path
+file_path="src/main/thrift$service_name/$table_name.thrift"
+
+git pull
+git commit -a -m "create table $table_name"
+git push
+mvn --batch-mode release:prepare
+mvn release:perform
+git pull
+popd
+
+

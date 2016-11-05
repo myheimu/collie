@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg2" viewBox="0 0 115.81 188.69" version="1.0">
+  <g id="layer1" stroke-linejoin="round" transform="translate(-116.81 -634.58)" stroke="#000" stroke-linecap="round" fill="#fff">
+    <path id="rect3196" stroke-width="10" d="m174.72 639.58c-29.2 0-52.91 13.35-52.91 29.79v119.12c0 16.44 23.71 29.78 52.91 29.78s52.91-13.34 52.91-29.78v-119.12h-0.04c0-16.44-23.67-29.79-52.87-29.79z"/>
+    <path id="path2527" d="m214.8 698.03a30.686 17.717 0 1 1 -61.37 0 30.686 17.717 0 1 1 61.37 0z" stroke-width="2.9375" transform="matrix(1.6639 0 0 1.6225 -131.61 -463.2)"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Database 1</dc:title>
+        <dc:date>2006-12-26T00:00:00</dc:date>
+        <dc:description>clip art, clipart, </dc:description>
+        <dc:source>http://openclipart.org/detail/13277/-by--13277</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>ericlemerdy</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>clip art</rdf:li>
+            <rdf:li>clipart</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,18 @@
+{% extends "profile/index.html" %}
+
+{% block script %}
+    <!-- <script src="{{ STATIC_URL }}js/profile/kerberos.js"></script> -->
+{% endblock %}
+
+{% block profile_panel %}
+    <div class="row-fluid">
+        <div class="span6">
+            <label>
+                Principal Management
+            </label>
+        </div>
+    </div>
+    <hr class="split_line" style="margin-top: 0px;"/>
+
+    {% include 'profile/principal_own.html' %}
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <a href="/module/index" title="Go to Modules" class="tip-bottom"><i class="icon-home"></i> Modules</a>
+{% endblock %}
+
+{% block css %}
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript">
+        $(document).data("uploadMode","{{ upload_mode }}")
+    </script>
+    <script src="{{ STATIC_URL }}js/module/module_index.js"></script>
+    <script src="{{ STATIC_URL }}js/module/module_new.js"></script>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span10">
+            </div>
+            <div class="span2">
+                <!-- id="create-project"  -->
+                <a class="btn btn-success" style="margin-bottom: 10px" data-toggle="modal" data-target="#newModuleModal" data-backdrop="static">Create Module</a>
+            </div>
+        </div>
+        <hr style="margin: 2px"/>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="widget-box">
+                    <div class="widget-title">
+                        <span class="icon"><i class="icon-th"></i></span>
+                        <h5>Modules</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <table class="table table-bordered data-table" >
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <!--th>Id</th-->
+                                <th>Created By</th>
+                                <th>Popularity</th>
+                                <!--th>Created Date</th-->
+                                <!--th>Modified By</th-->
+                                <!--th>Modified Date</th-->
+                                <th>Wiki Link</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for module in module_list %}
+                                <tr class="gradeA">
+                                    <td><a href="/module/manage?module_id={{ module.id }}">{{ module.name }}</a></td>
+                                    <td style="width: 30%">{{ module.description }}</td>
+                                    <!--td>{{ module.id }}</td-->
+                                    <td>{{ module.created_by }}</td>
+                                    <td>
+                                        <p style="white-space: nowrap; padding-right: 2px;">
+                                            <img src="{{ STATIC_URL }}img/bar_start.gif" style="vertical-align: middle;">
+                                            <img src="{{ STATIC_URL }}img/blue_body.gif" width="{{ module.popularity }}%" style="vertical-align: middle; height: 8px; margin-left: -3px">
+                                            <img src="{{ STATIC_URL }}img/blue_border.gif" style="vertical-align: middle; margin-left: -3px">
+                                        </p>
+                                    </td>
+                                    <!--td>{{ module.created_time }}</td-->
+                                    <!--td>{{ module.modify_by }}</td-->
+                                    <!--td>{{ module.modify_time }}</td-->
+                                    <td style="width:30%; ">
+                                        <a href='{{ module.wiki_link }}'>
+                                            {% if module.wiki_link|length > 60 %}
+                                                {{ module.wiki_link | slice:":60" }}...
+                                            {% else %}
+                                                {{ module.wiki_link}}
+                                            {% endif %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include 'module/module_new.html' %}
+
+{% endblock %}

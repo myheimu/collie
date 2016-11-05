@@ -1,0 +1,4 @@
+[
+	{ "data" : "A node", "attr": { "id" : "a_node" }, "children" : [ { "data" : "Only child", "state" : "closed", "attr": { "id" : "c_node" } } ], "state" : "open" },
+	"Ajax node"
+]

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_edit.js?r=20151023"></script>
+    <script src="{{ STATIC_URL }}js/project/project_execute.js"></script>
+    <script src="{{ STATIC_URL }}js/project/diagram.js"></script>
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_edit.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_execute.css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/diagram.css" />
+{% endblock %}
+
+{% block header %}
+    <a href="/project/index" title="Go to Projects" class="tip-bottom"><i class="icon-home"></i> Projects</a>
+    <a href="#" title="Create Project" class="tip-bottom">Create Project</a>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span8">
+            <span class="badge badge-info" id="project_id">{{ project_id }}</span>
+            <strong style="margin-left: 10px">{{ project_name }}</strong>
+        </div>
+        <div class="span4" style="text-align: right">
+            <div id="execute_project" style="display: none;">
+                <!-- a class="btn btn-group" style="margin-bottom: 10px; width: 80px; ">Execute</a -->
+                <div class="btn-group" style="margin-bottom: 10px">
+                    <button data-toggle="dropdown" class="btn btn-info dropdown-toggle">Execute <span class="caret"></span></button>
+                    <ul class="dropdown-menu" style="text-align: left" id="flows">
+                        <li class="flow" id="flow_temp" flow_name="" style="display: none"><a href="#">Action</a></li>
+                    </ul>
+                </div>
+                <a id="edit_project" class="btn btn-primary" style="margin-bottom: 10px; width: 80px; display: none; ">Edit</a>
+            </div>
+            <a id="save_project" class="btn btn-success" style="margin-bottom: 10px; width: 80px; display: none; ">Save</a>
+        </div>
+    </div>
+    <hr style="margin: 2px"/>
+    <div class="row-fluid">
+        <div class="span9">
+            <div class="project-panel" id="project-panel">
+                <div class="job" id="job_temp" style="display: none"><div class="dependency"></div></div>
+            </div>
+        </div>
+        <div class="span3">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon"><i class="icon-th"></i></span>
+                    <h5>Modules</h5>
+                </div>
+                <div class="widget-content">
+                    <!-- TODO
+                    <div class="row-fluid clearfix" style="margin: 2px">
+                        <input class="span8" type="text"/>
+                        <button class="btn btn-default btn-lg span3 pull-right" style="width: 80px">Search</button>
+                    </div>
+                    <hr style="margin: 5px"/>
+                    -->
+                    <ul class="activity-list" style="height: 600px !important; overflow: scroll;">
+                        {% for module in module_list %}
+                        <li class="drag-item" style="margin: 4px">
+                            <div class="row-fluid" style="margin: 2px">
+                                <a class="nopadding pull-left"><i class="icon-tasks" style="margin-right: 6px"></i></a>
+                                <a class="nopadding pull-left add-job" module_id="{{ module.id }}" module_name="{{ module.name }}"><label>{{ module.name }}</label></a>
+                                <a class="tip pull-right nopadding module_link" href="#" title="see details" module_id="{{ module.id }}">
+                                    <i class="icon-double-angle-right"></i>
+                                </a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="processing_fade" id="saving_fade"></div>
+    <div class="processing_modal" id="saving_modal">
+        <img id="loader" src="{{ STATIC_URL }}img/loading.gif" />
+    </div>
+    {% include 'project/project_job_new.html' %}
+    {% include 'project/project_execute.html' %}
+{% endblock %}

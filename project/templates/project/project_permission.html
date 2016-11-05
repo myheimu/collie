@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/project/project_permission.css">
+{% endblock %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/project/project_permission.js"></script>
+{% endblock %}
+
+{% block header %}
+    <a href="/project/index" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Projects</a>
+    <a href="#">Manage</a>
+    <a href="#">Permission</a>
+{% endblock %}
+
+{% block main_panel %}
+    <div class="container-fluid">
+
+        <div class="row-fluid info-panel">
+            <div class="span9">
+                <h4>
+                    Project Permissions
+                </h4>
+                <label>
+                    Following users & groups are allowed to operate on this project with role.
+                </label>
+            </div>
+            <div class="span3">
+                <a class="btn btn-success" style="margin-top: 40px;" data-toggle="modal" data-target="#newPermission">New Permission</a>
+            </div>
+        </div>
+
+        <hr class="split_line"/>
+
+        <form class="form-horizontal permission-form">
+            <div class="widget-box">
+                <div class="widget-title">
+                    <span class="icon">
+                        <i class="icon-file"></i>
+                    </span>
+                    <h5>Grant Items</h5>
+                </div>
+                <div class="widget-content nopadding">
+                    <ul class="item-list">
+                        {% for group in groups %}
+                        <li>
+                            <a href="#">
+                                <i class="icon-group"></i>
+                                {{ group.name }}
+                            </a>
+                            <div class="op" group_name="{{ group.name }}">
+                                <select style="width: 150px" class="role_select">
+                                    <option value="owner" {% ifequal group.role 'owner'%} selected="selected" {% endifequal %}>Owner</option>
+                                    <option value="user" {% ifequal group.role 'user'%} selected="selected" {% endifequal %}>User</option>
+                                </select>
+                                <a href="#" class="btn btn-danger btn-small btn_delete">Delete</a>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="modal fade" id="newPermission" tabindex="-1" role="dialog" style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="">New Permission</h4>
+                </div>
+                <div class="modal-body" style="max-height: 1500px; overflow: hidden;">
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label">Group</label>
+                            <div class="controls">
+                                <input type="text" value="" class="input-big" id="group_name" placeholder="name of group">
+                                <a class="btn btn-info" id="btn_check_group">Check</a>
+                                <span class="help-block verify_result"></span>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Grant Role</label>
+                            <div class="controls">
+                                <select style="width: 150px" id="new_permission_role_select">
+                                    <option value="owner">Owner</option>
+                                    <option value="user">User</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button submit" class="btn btn-primary" id="btn_save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

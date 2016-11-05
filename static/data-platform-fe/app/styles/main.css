@@ -1,0 +1,81 @@
+
+a,a:hover,a:active,a:focus{
+  text-decoration: none;
+}
+.navbar{
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.top-buttons{
+  position: absolute;
+  margin-left:250px;
+  left: 0;
+}
+.sidebar{
+  background-color: #ddd;
+  height: 100%;
+  width:250px;
+  float: left;
+}
+.sidebar ul{
+  padding-left: 20px;
+  font-size: 20px;
+}
+.main{
+  margin-left:250px;
+  height:100%;
+  overflow-y: auto;
+  padding-top: 50px;
+}
+.main-container{
+  position: absolute;
+  bottom:0;
+  top:52px;
+  left:0;
+  right:0;
+}
+.nav{
+  cursor: pointer;
+}
+
+.table .abs-center{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.mrm{
+  margin-right:10px;
+}
+.mr10{
+  margin-right: 10px;
+}
+.mf10{
+  margin-left: 10px;
+}
+.pt10{
+  padding-top: 10px;
+}
+.pt20{
+  padding-top: 20px;
+}
+
+/* 代码编辑器样式 */
+.CodeMirror{
+  border: 1px solid #ddd;
+}
+.ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+.table{
+  table-layout: fixed;
+}
+#codemirror-input{
+  position: absolute;
+  top:15px;
+}
+.panel-body{
+  position: relative;
+}

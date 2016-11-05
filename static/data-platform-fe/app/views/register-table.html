@@ -1,0 +1,220 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+			<form ng-submit="submit()" class="form-horizontal" ng-disableds="true">
+				<h3>
+					存量日志梳理
+					<button class="btn btn-primary pull-right ml10" type="submit" ng-show="!viewTable || editing">完成</button>
+					<button class="btn btn-warning pull-right ml10 mr10" type="button" ng-show="editing" ng-click="cancel()">取消</button>
+					<button class="btn btn-primary pull-right ml10" type="button" ng-show="viewTable&&!editing" ng-click="edit()">编辑</button>
+				</h3>
+				<hr>
+				<fieldset ng-disabled="!editing && viewTable">
+					<div class="panel panel-default">
+						<div class="panel-heading">表说明</div>
+						<div class="panel-body">
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据名</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空(格式为*/*)" title="*/*" pattern=".+\/.+" type="text" ng-model="table.name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据类型</label>
+								<div class="col-sm-4">
+									<select class="form-control" required ng-model="table.data_type" ng-inits="table.data_type='log-data'">
+										<option value="">请选择</option>
+										<option value="temp-data">中间数据</option>
+										<option value="log-data">日志</option>
+									</select>
+								</div>
+								<label class="col-sm-2 control-label">更新周期</label>
+								<div class="col-sm-3">
+									<div class="input-group" ng-hide="table.data_type=='log-data'">
+										<input type="number" min="1" class="form-control" ng-required="table.data_type=='temp-data'" ng-disabled="table.data_type=='log-data'" ng-model="table.update_interval">
+										<div class="input-group-addon">天</div>
+									</div>
+									<div class="input-group" ng-show="table.data_type=='log-data'">
+										<div class="input-group-addon">实时</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group" ng-if="table.data_type == 'log-data'">
+								<label class="col-sm-2 control-label">期望保留时间</label>
+								<div class="col-sm-4">
+									<div class="input-group">
+										<input class="form-control" required placeholder="请勿留空" type="number" ng-model="table.log_preserve_time">
+										<div class="input-group-addon">天</div>
+									</div>
+								</div>
+								<div ng-if="table.data_type == 'log-data'">
+									<label class="col-sm-2 control-label">Scribe 集群</label>
+									<div class="col-sm-3">
+										<select ng-model="table.scribe" required class="form-control">
+                      <option value="">请选择</option>
+											<option value="China-lg">China-lg</option>
+                      <option value="China-c3">China-c3</option>
+											<option value="Sigapore">Sigapore</option>
+											<option value="US Oregon">US Oregon</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="form-group" ng-if="table.data_type == 'log-data'">
+								<label class="col-sm-2 control-label">日志量/日</label>
+								<div class="col-sm-4">
+									<input type="text" class="form-control" ng-model="table.log_size">
+								</div>
+								<label class="col-sm-2 control-label">日志条数/日</label>
+								<div class="col-sm-3">
+									<input type="text" class="form-control" ng-model="table.log_recorder_num">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据URI</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" value="/user/h_scribe/" type="text" ng-model="table.uri">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据所属部门</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" type="text" ng-model="table.department">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据所属业务</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" type="text" ng-model="table.service">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">业务负责人</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" type="email" ng-model="table.service_supervisor">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据负责人</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" type="email" ng-model="table.supervisor">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">数据描述</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" type="text" ng-model="table.description">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" title="?"><a href="http://wiki.mioffice.cn/images/1/16/%E5%B0%8F%E7%B1%B3%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E8%A7%84%E8%8C%83.pdf" target="_blank">隐私级别</a></label>
+								<div class="col-sm-9">
+									<select class="form-control" required ng-model="table.privacy_level" ng-change="table.grant_user_list = table.privacy_level == 'C'?'Public':''">
+										<option value="">请选择</option>
+										<option value="A">A</option>
+										<option value="B">B</option>
+										<option value="C">C</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label" title="Public或指定kerberos帐号列表">读权限用户列表</label>
+								<div class="col-sm-9">
+									<input class="form-control" required placeholder="请勿留空" type="text" ng-model="table.grant_user_list">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">文件格式</label>
+								<div class="col-sm-5">
+									<input type="text" required placeholder="请勿留空" class="form-control" required ng-model="table.file_type">
+								</div>
+								<div class="col-sm-4">
+									<select class="form-control" ng-model="table.file_type">
+										<option ng-selected="table.file_type || true">请选择或自填</option>
+										<option value="{{format}}" ng-repeat="format in file_format_option[table.data_type]">{{format}}</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group" ng-if="table.file_type != 'parquet'">
+								<label class="col-sm-2 control-label">序列化格式</label>
+								<div class="col-sm-5">
+									<input type="text" required placeholder="请勿留空" class="form-control" ng-model="table.deser_format">
+								</div>
+								<div class="col-sm-4">
+									<select class="form-control" ng-model="table.deser_format">
+										<option ng-selected="table.file_type || true">请选择或自填</option>
+										<option value="delimited">delimited</option>
+										<option value="Thrift">Thrift</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">序列化参数</label>
+								<div class="col-sm-9">
+									<input type="text" placeholder="请勿留空" class="form-control" ng-init="table.serde_params=''" ng-model="table.serde_params" popover="{{deser_format_tips[table.deser_format]}}" popover-trigger="focus">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-2 control-label">分区</label>
+								<div class="col-sm-3">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox" ng-model="table.is_partition"> 是否分区
+										</label>
+									</div>
+								</div>
+								<label class="col-sm-3 control-label" ng-show="table.is_partition && table.data_type == 'log-data'">year:int;month:int;day:int</label>
+								<label class="col-sm-3 control-label" ng-show="table.is_partition && table.data_type == 'temp-data'">date:int</label>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">字段说明（thrift定义）</div>
+						<div class="panel-body">
+              <input type="text" ng-model="table.definition" required id="codemirror-input">
+							<ui-codemirror ui-codemirror-opts="editorOptions" ng-model="table.definition" required></ui-codemirror>
+							<!-- <table class="table table-bordered table-hover table-striped">
+								<thead>
+									<tr>
+										<th>Tag</th>
+										<th>字段名</th>
+										<th>字段说明</th>
+										<th>字段类型</th>
+										<th>Optional</th>
+										<th>Partition</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="field in table.columns">
+										<td><input type="text" class="form-control" required placeholder="请勿留空" ng-model="field.tag"></td>
+										<td><input type="text" class="form-control" required placeholder="请勿留空" ng-model="field.name"></td>
+										<td><input type="text" class="form-control" required placeholder="请勿留空" ng-model="field.comment"></td>
+										<td><select ng-model="field.type" class="form-control" required ng-options="type as type for type in fieldTypes">
+											<option value="">请选择</option>
+										</select></td>
+										<td class="abs-center"><input type="checkbox" class="" ng-model="field.is_optional" ng-init="field.is_optional=true"></td>
+										<td class="abs-center"><input type="checkbox" class="" ng-model="field.is_partition" ng-init="field.is_partition=false"></td>
+									</tr>
+								</tbody>
+							</table>
+							<p>
+								<input type="button" class="btn btn-default pull-right" ng-click="table.columns.pop()" value="移除末项">
+								<input type="button" class="btn btn-success pull-right mr10" ng-click="table.columns.push({})" value="插入字段">
+							</p> -->
+						</div>
+					</div>
+				</fieldset>
+        <h3>
+          <button class="btn btn-primary pull-right ml10" type="submit" ng-show="!viewTable || editing">完成</button>
+          <button class="btn btn-warning pull-right ml10 mr10" type="button" ng-show="editing" ng-click="cancel()">取消</button>
+          <button class="btn btn-primary pull-right ml10" type="button" ng-show="viewTable&&!editing" ng-click="edit()">编辑</button>
+        </h3>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">
+			<pre>{{table|json}}</pre>
+		</div>
+	</div>
+</div>

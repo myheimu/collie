@@ -1,0 +1,214 @@
+<div class="modal fade" id="newModuleModal" tabindex="-1" role="dialog" style="width: 800px; max-height: 800px; display: none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">New Module</h4>
+            </div>
+            <div class="modal-body" style="max-height: 450px; overflow-x: hidden; overflow-y: auto;">
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <label class="control-label">Module Name</label>
+                        <div class="controls">
+                            <input type="text" value="" class="input-big" id="module_name" placeholder="name of module" style="width: 360px">
+                            <label>required</label>
+                        </div>
+                    </div>
+                    <div class="control-group" id="control_group_description">
+                        <label class="control-label">Module Description</label>
+                        <div class="controls">
+                            <textarea class="form-control" rows="2" id="module_description" placeholder="description of module" style="width: 360px"></textarea>
+                            <label>required</label>
+                        </div>
+                    </div>
+                    <div class="control-group" id="control_group_wiki_link">
+                        <label class="control-label">Wiki Link</label>
+                        <div class="controls">
+                            <textarea class="form-control" rows="2" id="module_wiki_link" placeholder="wiki link of module" style="width: 360px"></textarea>
+                            <label>optional</label>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="control-group">
+                        <label class="control-label">Version Comment</label>
+                        <div class="controls">
+                            <input type="text" class="input-big" id="version_comment" placeholder="first version">
+                            <label>required</label>
+                        </div>
+                    </div>
+                    -->
+                    <div class="control-group">
+                        <label class="control-label">Select Type</label>
+                        <div class="controls">
+                            <select style="width: 360px" id="version_type">
+                                <option value="Shell" options_target="options_shell" support_file_type=".zip">shell</option>
+                                <option value="Jar" options_target="options_jar" support_file_type=".zip">jar</option>
+                                <option value="yarn" options_target="options_yarn" support_file_type=".jar">yarn</option>
+                                <option value="spark" options_target="options_spark" support_file_type=".jar">spark</option>
+                                <!-- TODO
+                                <option value="Hive">Hive</option>
+                                -->
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">File upload</label>
+                        <div class="controls" id="upload_method">
+                            <div data-toggle="buttons-radio" class="btn-group">
+                                <button class="btn btn-primary" type="button" onclick="fromLocal()" id="local_btn">From local file</button>
+                                <button class="btn btn-primary" type="button" onclick="fromGit()" id="git_btn">From git</button>
+                            </div>
+                        </div>
+                        <div id="from_local_panel">
+                        <div class="controls" style="display: none" id="file_upload_keep_old">
+                            <label class="old_file_name"></label>
+                            <label style="text-decoration: underline" id="go_upload_new_file">upload new file</label>
+                        </div>
+                        <div class="controls" id="file_upload_renew">
+                            <input type="file" accept=".zip" name="fileToUpload" id="fileToUpload" style="width: 360px"/>
+                            <div class="resumable-progress">
+                                <table>
+                                    <tr>
+                                        <td width="100%">
+                                            <div class="progress-container">
+                                                <div class="progress-bar"></div>
+                                            </div>
+                                        </td>
+                                        <td class="progress-text" nowrap="nowrap"></td>
+                                        <td class="progress-pause" nowrap="nowrap">
+                                            <a href="#" onclick="r.upload(); return(false);"
+                                               class="progress-resume-link"><img src="{{ STATIC_URL }}img/resume.png"
+                                                                                 title="Resume upload"/></a>
+                                            <a href="#" onclick="r.pause(); return(false);" class="progress-pause-link"><img
+                                                    src="{{ STATIC_URL }}img/pause.png" title="Pause upload"/></a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <ul class="resumable-list"></ul>
+                        </div>
+                        <div class="controls" style="display: none" id="file_upload_go_keep_old">
+                            <label id="go_keep_old" style="text-decoration: underline; width: 220px">keep latest version uploaded file<a class="old_file_name" style="display: none"></a></label>
+                        </div>
+                        </div>
+                        <div id="from_git_panel">
+                        <div class="controls" style="display: none" id="upload_git">
+                            <!--<label id="git_repo">click here to edit git repository</label>
+                            <div id="git_repo_edit">
+                                <input type="text" value="" class="input-big" placeholder="git link" style="width: 360px">
+                                <button class="btn btn-success" type="button" onclick="saveRepo()">Save</button>
+                                <button class="btn btn-danger" type="button" onclick="unsaveRepo()">Cancel</button>
+                            </div> -->
+                            <select style="width: 360px" id="git_repo">
+                                <option></option>
+                                {% for repo in repositories %}
+                                    <option value='{{ repo }}'>{{ repo }}</option>
+                                {% endfor %}
+                            </select>
+                            <label>Git repository</label>
+                            <input type="text" value="master" disabled="" class="input-big" id="git_branch" placeholder="name of branch" style="width: 360px">
+                            <label>Branch</label>
+                            <select style="width: 180px" id="git_history"></select>
+                            <select style="width: 180px" id="git_build"></select>
+                            <div style="margin-top: 5px">
+                                <button class="btn btn-success" type="button" onclick="gitBuild()"id="git_build_btn">Build</button>
+                                <button class="btn btn-danger" type="button" onclick="resetGitOptions()" id="git_reset_btn">Reset</button>
+                            </div>
+                            <div id="gitUploadResult"></div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="control-group options_div" id="options_shell">
+                        <label class="control-label">Shell Options</label>
+                        <div class="controls">
+                            <label><input type="checkbox" name="radios" id="check_hadoop_support"/>Hadoop Support</label>
+                            <input type="text" class="input-big" id="input_main_script" placeholder="main script" style="width: 360px">
+                            <label>required (main script)</label>
+                            <span class="span12" style="margin-left: 0px; margin-bottom: 5px">
+                                <a href="#" class="btn btn-default btn_add_option" append_target="shell_args" style="width: 360px"> + args + </a>
+                                <label>usage in shell: "${argue_name}"</label>
+                            </span>
+                            <div class="row-fluid container_options" id="shell_args">
+                                <div class="option" id="option_temp" style="display: none">
+                                    <input type="text" class="input-mini input_option_name" placeholder="Name" style="margin: 0px; width: 150px">
+                                    <input type="text" class="input-mini input_option_default" placeholder="Default Value" style="margin: 5px; width: 90px">
+                                    <input type="text" class="input-mini input_option_description" placeholder="Description" style="margin: 5px; width: 80px">
+                                    <a onclick="" class="btn btn-warning btn-mini btn_delete_option">
+                                        <span class="icon"><i class="icon-minus"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group options_div" style="display: none" id="options_jar">
+                        <label class="control-label">Jar Options</label>
+                        <div class="controls">
+                            <input type="text" class="input-big" id="input_java_class" placeholder="java.class" style="width: 360px">
+                            <label>required (java.class)</label>
+                            <input type="text" class="input-big" id="input_classpath" placeholder="classpath" style="width: 360px">
+                            <label>optional (classpath)</label>
+                            <input type="text" class="input-big" id="input_Xms" placeholder="Xms" style="width: 360px">
+                            <label>optional (Xms)</label>
+                            <input type="text" class="input-big" id="input_Xmx" placeholder="Xmx" style="width: 360px">
+                            <label>optional (Xmx)</label>
+                            <span class="span12" style="margin-left: 0px; margin-bottom: 5px">
+                                <a href="#" class="btn btn-default btn_add_option" append_target="jar_properties" style="width: 360px"> + jvm.args + </a>
+                                <label>expand form "-D{argue_name}={argue_value}"</label>
+                            </span>
+                            <div class="row-fluid container_options" id="jar_properties">
+                            </div>
+                            <span class="span12" style="margin: 0px">
+                                <a href="#" class="btn btn-default btn_add_option" append_target="jar_arguments" style="width: 360px"> + main.args + </a>
+                                <label>expand form "-{argue_name} {argue_value}"</label>
+                            </span>
+                            <div class="row-fluid container_options" id="jar_arguments">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group options_div" style="display: none" id="options_yarn">
+                        <label class="control-label">Yarn Options</label>
+                        <div class="controls">
+                            <input type="text" class="input-big" id="input_main_class" placeholder="mainClass" style="width: 360px">
+                            <label>required (mainClass)</label>
+                            <span class="span12" style="margin-left: 0px; margin-bottom: 5px">
+                                <a href="#" class="btn btn-default btn_add_option" append_target="yarn_properties" style="width: 360px"> + jvm.args + </a>
+                                <label>expand form "-D{argue_name}={argue_value}"</label>
+                            </span>
+                            <div class="row-fluid container_options" id="yarn_properties">
+                            </div>
+                            <span class="span12" style="margin: 0px">
+                                <a href="#" class="btn btn-default btn_add_option" append_target="yarn_arguments" style="width: 360px"> + main.args + </a>
+                                <label>expand form "-{argue_name} {argue_value}"</label>
+                            </span>
+                            <div class="row-fluid container_options" id="yarn_arguments">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group options_div" style="display: none" id="options_spark">
+                        <label class="control-label">Spark Options</label>
+                        <div class="controls">
+                            <input type="text" class="input-big" id="input_spark_class" placeholder="class" style="width: 360px">
+                            <label>class</label>
+                            <span class="span12" style="margin-left: 0px; margin-bottom: 5px">
+                                <a href="#" class="btn btn-default btn_add_option" append_target="spark_arguments" style="width: 360px"> + spark.args + </a>
+                                <label>expand form "--{argue_name} {argue_value}"</label>
+                            </span>
+                            <div class="row-fluid container_options" id="spark_arguments">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button submit" class="btn btn-primary" id="btn_save">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="processing_fade" id="module_saving_fade"></div>
+    <div class="processing_modal" id="module_saving_modal">
+        <img id="loader" src="{{ STATIC_URL }}img/loading.gif" />
+    </div>
+</div>

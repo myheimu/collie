@@ -1,0 +1,29 @@
+<!-- javascript -->
+<!-- css -->
+
+<form class="form-horizontal">
+    <div class="widget-box">
+        <div class="widget-title">
+            <span class="icon"> <i class="icon-file"></i> </span>
+            <h5>Kerberos Keys</h5>
+        </div>
+        <div class="widget-content nopadding">
+            <ul class="profile_list">
+                {% for kerberos_key in keys %}
+                <li>
+                    <div>
+                        <div class="fr">
+                            <a href="#" class="btn btn-danger btn-mini btn_delete" key_name="{{ kerberos_key.name }}">Delete</a>
+                        </div>
+                        <p>
+                            <a href="#">
+                                {{ kerberos_key.name }}
+                            </a>
+                        </p>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</form>

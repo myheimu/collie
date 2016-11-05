@@ -1,0 +1,27 @@
+<modules>
+    <module>
+        <name>wordcount-java</name>
+        <cmd>cd samples/java/wordcount-java;sh deploy.sh</cmd>
+        <target>samples/java/wordcount-java/target/wordcount-java.zip</target>
+    </module>
+    <module>
+        <name>add_without_hadoop_support</name>
+        <cmd>cd samples/shell/add_without_hadoop_support;sh deploy.sh</cmd>
+        <target>samples/shell/add_without_hadoop_support/target/add.zip</target>
+    </module>
+    <module>
+        <name>copy2local_with_hadoop_support</name>
+        <cmd>cd samples/shell/copy2local_with_hadoop_support;sh deploy.sh</cmd>
+        <target>samples/shell/copy2local_with_hadoop_support/target/copy2local.zip</target>
+    </module>
+    <module>
+        <name>wordcount-spark</name>
+        <cmd>cd samples/spark/wordcount-spark;sh build.sh</cmd>
+        <target>samples/spark/wordcount-spark/target/wordcount-spark-0.0.1-SNAPSHOT-jar-with-dependencies.jar</target>
+    </module>
+    <module>
+        <name>wordcount-yarn</name>
+        <cmd>cd samples/yarn/wordcount-yarn;sh build.sh</cmd>
+        <target>samples/yarn/wordcount-yarn/target/wordcount-yarn-0.0.1-SNAPSHOT-word-count-job.jar</target>
+    </module>
+</modules>

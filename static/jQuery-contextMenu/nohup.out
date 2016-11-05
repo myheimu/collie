@@ -1,0 +1,1261 @@
+Java HotSpot(TM) 64-Bit Server VM (build 20.45-b01, mixed mode)
+[3326544]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:96)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+Caused by: java.lang.ClassNotFoundException: com.intellij.openapi.actionSystem.CommonDataKeys PluginClassLoader[zookeeper, 0.0.10]
+	at com.intellij.ide.plugins.cl.PluginClassLoader.loadClass(PluginClassLoader.java:77)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	... 48 more
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - Last Action: EditorDown 
+[3326546]  ERROR - penapi.actionSystem.impl.Utils - Original exception:  
+java.lang.ClassNotFoundException: com.intellij.openapi.actionSystem.CommonDataKeys PluginClassLoader[zookeeper, 0.0.10]
+	at com.intellij.ide.plugins.cl.PluginClassLoader.loadClass(PluginClassLoader.java:77)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:96)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[3326592]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu$MyPopupMenuListener.popupMenuWillBecomeVisible(ActionPopupMenuImpl.java:191)
+	at javax.swing.JPopupMenu.firePopupMenuWillBecomeVisible(JPopupMenu.java:623)
+	at javax.swing.JPopupMenu.setVisible(JPopupMenu.java:730)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.setVisible(ActionPopupMenuImpl.java:168)
+	at javax.swing.JPopupMenu.show(JPopupMenu.java:904)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:163)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[3326593]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[3326593]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[3326593]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[3326593]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[3326593]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[3326593]  ERROR - penapi.actionSystem.impl.Utils - Last Action: EditorDown 
+[84984834]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[84984848]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85043109]   WARN - il.projectWizard.ModuleBuilder - File /home/haibin/svn/MiliaoRelationTutorial/sleep_echo/sleep_echo.iml does not exist 
+java.io.IOException: File /home/haibin/svn/MiliaoRelationTutorial/sleep_echo/sleep_echo.iml does not exist
+	at com.intellij.openapi.module.impl.ModuleManagerImpl$ModuleModelImpl.loadModuleInternal(ModuleManagerImpl.java:705)
+	at com.intellij.openapi.module.impl.ModuleManagerImpl$ModuleModelImpl.loadModule(ModuleManagerImpl.java:693)
+	at com.intellij.ide.util.projectWizard.ExistingModuleLoader.createModule(ExistingModuleLoader.java:63)
+	at com.intellij.platform.templates.TemplateModuleBuilder.createModule(TemplateModuleBuilder.java:166)
+	at com.intellij.ide.util.projectWizard.ModuleBuilder.createAndCommitIfNeeded(ModuleBuilder.java:246)
+	at com.intellij.ide.util.projectWizard.ModuleBuilder$3.compute(ModuleBuilder.java:301)
+	at com.intellij.ide.util.projectWizard.ModuleBuilder$3.compute(ModuleBuilder.java:298)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runWriteAction(ApplicationImpl.java:1035)
+	at com.intellij.ide.util.projectWizard.ModuleBuilder.commitModule(ModuleBuilder.java:298)
+	at com.intellij.platform.templates.TemplateModuleBuilder.commitModule(TemplateModuleBuilder.java:139)
+	at com.intellij.openapi.roots.ui.configuration.actions.NewModuleAction.createModuleFromWizard(NewModuleAction.java:87)
+	at com.intellij.openapi.roots.ui.configuration.actions.NewModuleAction.actionPerformed(NewModuleAction.java:66)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAware(ActionUtil.java:162)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter$1.run(ActionMenuItem.java:259)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:892)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.runOnOwnContext(IdeFocusManagerImpl.java:114)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.actionPerformed(ActionMenuItem.java:230)
+	at javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1995)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.java:104)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.doClick(BegMenuItemUI.java:512)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.access$300(BegMenuItemUI.java:44)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:532)
+	at java.awt.Component.processMouseEvent(Component.java:6297)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4236)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[85047715]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85047717]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85055351]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85055366]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85086646]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85086647]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85097734]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85097735]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85105017]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85105034]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85115054]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85115073]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85208826]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85208827]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85256693]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85256695]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85285655]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85285656]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85311349]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85311350]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85371498]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85371499]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85389720]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85389721]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:96)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[85392765]  ERROR - penapi.actionSystem.impl.Utils - Last Action: Compile 
+[85392773]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu$MyPopupMenuListener.popupMenuWillBecomeVisible(ActionPopupMenuImpl.java:191)
+	at javax.swing.JPopupMenu.firePopupMenuWillBecomeVisible(JPopupMenu.java:623)
+	at javax.swing.JPopupMenu.setVisible(JPopupMenu.java:730)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.setVisible(ActionPopupMenuImpl.java:168)
+	at javax.swing.JPopupMenu.show(JPopupMenu.java:904)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:163)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[85392774]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[85392774]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[85392774]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[85392774]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[85392774]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[85392774]  ERROR - penapi.actionSystem.impl.Utils - Last Action: Compile 
+[85394978]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85394978]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85416576]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85416577]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85416819]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:96)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[85416820]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[85416820]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[85416820]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[85416820]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[85416820]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[85416820]  ERROR - penapi.actionSystem.impl.Utils - Last Action: SaveAll 
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu$MyPopupMenuListener.popupMenuWillBecomeVisible(ActionPopupMenuImpl.java:191)
+	at javax.swing.JPopupMenu.firePopupMenuWillBecomeVisible(JPopupMenu.java:623)
+	at javax.swing.JPopupMenu.setVisible(JPopupMenu.java:730)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.setVisible(ActionPopupMenuImpl.java:168)
+	at javax.swing.JPopupMenu.show(JPopupMenu.java:904)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:163)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[85416832]  ERROR - penapi.actionSystem.impl.Utils - Last Action: SaveAll 
+[85425394]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85425394]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[85429227]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[85429228]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[90427328]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[90427329]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[90434528]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[90434529]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[90860432]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[90860433]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[90873202]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:96)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[90873203]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[90873203]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[90873203]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[90873203]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[90873203]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[90873203]  ERROR - penapi.actionSystem.impl.Utils - Last Action: GotoFile 
+[90873223]  ERROR - penapi.actionSystem.impl.Utils - update failed for AnAction with ID=UpdateZkNodeAction 
+java.lang.NoClassDefFoundError: com/intellij/openapi/actionSystem/CommonDataKeys
+	at org.mvnsearch.intellij.plugin.zookeeper.actions.UpdateZkNodeAction$1.isEnabled(UpdateZkNodeAction.java:47)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:102)
+	at com.intellij.openapi.editor.actionSystem.EditorAction.update(EditorAction.java:122)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareUpdate(ActionUtil.java:111)
+	at com.intellij.openapi.actionSystem.impl.Utils.doUpdate(Utils.java:167)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:126)
+	at com.intellij.openapi.actionSystem.impl.Utils.expandActionGroup(Utils.java:85)
+	at com.intellij.openapi.actionSystem.impl.Utils.fillMenu(Utils.java:241)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu$MyPopupMenuListener.popupMenuWillBecomeVisible(ActionPopupMenuImpl.java:191)
+	at javax.swing.JPopupMenu.firePopupMenuWillBecomeVisible(JPopupMenu.java:623)
+	at javax.swing.JPopupMenu.setVisible(JPopupMenu.java:730)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.setVisible(ActionPopupMenuImpl.java:168)
+	at javax.swing.JPopupMenu.show(JPopupMenu.java:904)
+	at com.intellij.openapi.actionSystem.impl.ActionPopupMenuImpl$MyMenu.show(ActionPopupMenuImpl.java:163)
+	at com.intellij.openapi.fileEditor.impl.text.TextEditorComponent$MyEditorMouseListener.invokePopup(TextEditorComponent.java:294)
+	at com.intellij.util.EditorPopupHandler.handle(EditorPopupHandler.java:27)
+	at com.intellij.util.EditorPopupHandler.mousePressed(EditorPopupHandler.java:37)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.runMousePressedCommand(EditorImpl.java:5290)
+	at com.intellij.openapi.editor.impl.EditorImpl$MyMouseAdapter.mousePressed(EditorImpl.java:5250)
+	at java.awt.Component.processMouseEvent(Component.java:6294)
+	at javax.swing.JComponent.processMouseEvent(JComponent.java:3275)
+	at java.awt.Component.processEvent(Component.java:6062)
+	at java.awt.Container.processEvent(Container.java:2039)
+	at java.awt.Component.dispatchEventImpl(Component.java:4660)
+	at java.awt.Container.dispatchEventImpl(Container.java:2097)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4575)
+	at java.awt.LightweightDispatcher.processMouseEvent(Container.java:4233)
+	at java.awt.LightweightDispatcher.dispatchEvent(Container.java:4166)
+	at java.awt.Container.dispatchEventImpl(Container.java:2083)
+	at java.awt.Window.dispatchEventImpl(Window.java:2489)
+	at java.awt.Component.dispatchEvent(Component.java:4488)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:674)
+	at java.awt.EventQueue.access$400(EventQueue.java:81)
+	at java.awt.EventQueue$2.run(EventQueue.java:633)
+	at java.awt.EventQueue$2.run(EventQueue.java:631)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:98)
+	at java.awt.EventQueue$3.run(EventQueue.java:647)
+	at java.awt.EventQueue$3.run(EventQueue.java:645)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.AccessControlContext$1.doIntersectionPrivilege(AccessControlContext.java:87)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:644)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:700)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:521)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:348)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:269)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:184)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:174)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:169)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:122)
+[90873224]  ERROR - penapi.actionSystem.impl.Utils - IntelliJ IDEA 12.1.6  Build #IC-129.1359 
+[90873224]  ERROR - penapi.actionSystem.impl.Utils - JDK: 1.6.0_45 
+[90873224]  ERROR - penapi.actionSystem.impl.Utils - VM: Java HotSpot(TM) 64-Bit Server VM 
+[90873224]  ERROR - penapi.actionSystem.impl.Utils - Vendor: Sun Microsystems Inc. 
+[90873224]  ERROR - penapi.actionSystem.impl.Utils - OS: Linux 
+[90873224]  ERROR - penapi.actionSystem.impl.Utils - Last Action: GotoFile 
+[151368815]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[151368817]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[156470412]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[156470413]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[166956471]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[166956472]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[166961539]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[166961539]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167086485]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167086487]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167096509]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167096510]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167099957]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167099959]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167106388]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167106389]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167111224]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167111225]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167116438]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167116439]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167155764]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167155765]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167159589]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167159590]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167232737]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167232738]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167261732]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167261732]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167349973]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167349974]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167481650]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167481651]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167490373]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167490374]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167502669]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167502670]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167510591]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167510592]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167530167]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167530168]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167569235]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167569236]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167579301]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167579302]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[167580663]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[167580664]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[234028238]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[234028239]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[234036789]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[234036790]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[234240521]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[234240522]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[260217071]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[260217072]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[260296686]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[260296688]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[260396260]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[260396261]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[261077737]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[261077738]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[263055701]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[263055703]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[263263411]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[263263412]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[362490753]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[362490754]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[590679313]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[590679314]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[590734866]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[590734867]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[590757042]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[590757042]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[590795741]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[590795742]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[590829295]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[590829296]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[592081274]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592081275]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[592295687]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592295688]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[592378872]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592378873]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[592450628]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592450630]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[WARNING] Overriding profile: 'development' (source: settings.xml) with new instance from source: settings.xml
+[INFO] snapshot com.xiaomi.miliao:accessTrack:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.miliao:accessTrack:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:ipWrapper:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:ipWrapper:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:xiaomi-thrift-messaging:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:xiaomi-thrift-messaging:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:miliao-rootpom:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:miliao-rootpom:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.senseidb:sensei-java-client:2.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.senseidb:sensei-java-client:2.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.senseidb:sensei-parent:2.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.senseidb:sensei-parent:2.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:xiaomi-thrift-hotspots:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:xiaomi-thrift-hotspots:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot weibo4j:weibo4j:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot weibo4j:weibo4j:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot weibo4j:weibo4j-oauth2:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot weibo4j:weibo4j-oauth2:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.XMChannel:contactlist:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.XMChannel:contactlist:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.kaixin.open:kaixinApi:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.kaixin.open:kaixinApi:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.kaixin.open:kaixinApi:1.0-SNAPSHOT: checking for updates from mandubian-mvn
+[INFO] snapshot com.renren.api.client:renren-api:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.renren.api.client:renren-api:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.renren.api.client:renren-api:1.0-SNAPSHOT: checking for updates from mandubian-mvn
+[INFO] snapshot com.xiaomi:miliao-openapi-sdk:0.0.1-SNAPSHOT: checking for updates from central
+[592493717]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592493718]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[INFO] snapshot com.xiaomi:miliao-openapi-sdk:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.qq.open:openqq:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.qq.open:openqq:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:mfsclient:1.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:mfsclient:1.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:xmqp-client:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:xmqp-client:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-login:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-login:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:xiaomi-common-logger:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:xiaomi-common-logger:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:recommend-common:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:recommend-common:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:hbase-client:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:hbase-client:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:mdh-library:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:mdh-library:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:mdh-root:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:mdh-root:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot org.apache.hbase:hbase:0.94.3-mdh1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot org.apache.hbase:hbase:0.94.3-mdh1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:ext-log4j:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:ext-log4j:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:ext-log4j:1.0.0-SNAPSHOT: checking for updates from cloudbees netty
+[INFO] snapshot com.xiaomi.infra:ext-log4j:1.0.0-SNAPSHOT: checking for updates from apache release
+[INFO] snapshot com.xiaomi.infra:ext-log4j:1.0.0-SNAPSHOT: checking for updates from ghelmling.testing
+[INFO] snapshot com.xiaomi.infra:mdh-base-log:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:mdh-base-log:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:mdh-base-log:1.0.0-SNAPSHOT: checking for updates from cloudbees netty
+[INFO] snapshot com.xiaomi.infra:mdh-base-log:1.0.0-SNAPSHOT: checking for updates from apache release
+[INFO] snapshot com.xiaomi.infra:mdh-base-log:1.0.0-SNAPSHOT: checking for updates from ghelmling.testing
+[INFO] snapshot com.xiaomi.infra:mdh-base:1.0.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:mdh-base:1.0.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:mdh-base:1.0.0-SNAPSHOT: checking for updates from cloudbees netty
+[INFO] snapshot com.xiaomi.infra:mdh-base:1.0.0-SNAPSHOT: checking for updates from apache release
+[INFO] snapshot com.xiaomi.infra:mdh-base:1.0.0-SNAPSHOT: checking for updates from ghelmling.testing
+[INFO] snapshot com.xiaomi.infra:galaxy:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi.infra:galaxy:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.infra:galaxy:0.0.1-SNAPSHOT: checking for updates from cloudbees netty
+[INFO] snapshot com.xiaomi.infra:galaxy:0.0.1-SNAPSHOT: checking for updates from apache release
+[INFO] snapshot com.xiaomi.infra:galaxy:0.0.1-SNAPSHOT: checking for updates from ghelmling.testing
+[INFO] snapshot com.xiaomi:xiaomi-thrift-messaging:1.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:xiaomi-thrift-messaging:1.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[WARNING] Overriding profile: 'development' (source: settings.xml) with new instance from source: settings.xml
+[INFO] snapshot com.xiaomi:xiaomi-thrift-api:1.0.1-SNAPSHOT: checking for updates from central
+[WARNING] Overriding profile: 'development' (source: settings.xml) with new instance from source: settings.xml
+[INFO] snapshot com.xiaomi:miliao-common:2.0.2-SNAPSHOT: checking for updates from central
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:sources:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:sources:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] snapshot com.xiaomi:miliao-common:2.0.2-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot net.paoding:paoding-rose:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot net.paoding:paoding-rose:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot net.paoding:paoding-rose-scanning:1.0-SNAPSHOT: checking for updates from central
+[INFO] snapshot net.paoding:paoding-rose-scanning:1.0-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:rose-perf:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:rose-perf:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi.miliao:accessTrack:0.0.2-SNAPSHOT: checking for updates from central
+[INFO] Unable to find resource 'com.xiaomi:xmqp-client:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xmqp-client:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] snapshot com.xiaomi.miliao:accessTrack:0.0.2-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:xiaomi-quota-interceptor:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:xiaomi-quota-interceptor:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-security:0.0.3-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-security:0.0.3-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-log:0.0.7-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-log:0.0.7-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.26-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.26-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:bmw-assist:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:bmw-assist:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.1-SNAPSHOT: checking for updates from xiaomi-public
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.1-SNAPSHOT: checking for updates from xiaomi-releases
+[INFO] snapshot com.xiaomi:passport-service-api:0.0.1-SNAPSHOT: checking for updates from xiaomi-snapshots
+[INFO] snapshot com.xiaomi:passport-log:0.0.1-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-log:0.0.1-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] snapshot com.xiaomi:passport-common:0.0.8-SNAPSHOT: checking for updates from central
+[INFO] snapshot com.xiaomi:passport-common:0.0.8-SNAPSHOT: checking for updates from xiaomi-nexus
+[INFO] Unable to find resource 'com.sun.xml.bind:jaxb-impl:jar:javadoc:2.2.3-1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.sun.xml.bind:jaxb-impl:jar:javadoc:2.2.3-1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[592507046]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592507047]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[INFO] Unable to find resource 'javax.xml.bind:jaxb-api:jar:javadoc:2.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.xml.bind:jaxb-api:jar:javadoc:2.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-collections:commons-collections:jar:javadoc:3.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-collections:commons-collections:jar:javadoc:3.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'edu.emory:mathcs.backport:jar:javadoc:1.0.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-zookeeper:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'edu.emory:mathcs.backport:jar:javadoc:1.0.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-zookeeper:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpclient:jar:javadoc:4.1.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpclient:jar:javadoc:4.1.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xmlenc:xmlenc:jar:javadoc:0.52' in repository central (http://nexus)
+[592550381]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:/// name=C:\nppdf32Log\debuglog.txt 
+[592550382]   WARN - ewvfs.persistent.RefreshWorker - fs=LocalFileSystem dir=file:///home/haibin name=C:\nppdf32Log\debuglog.txt 
+[INFO] Unable to find resource 'xmlenc:xmlenc:jar:javadoc:0.52' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xmlenc:xmlenc:jar:sources:0.52' in repository central (http://nexus)
+[INFO] Unable to find resource 'xmlenc:xmlenc:jar:sources:0.52' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'edu.emory:mathcs.backport:jar:sources:1.0.0' in repository central (http://nexus)
+[WARNING] Unable to get resource 'org.springframework:spring-webmvc:jar:javadoc:2.5.6.SEC01' from repository central (http://nexus): Read timed out
+[INFO] Unable to find resource 'edu.emory:mathcs.backport:jar:sources:1.0.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.velocity:velocity-tools:jar:sources:1.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.velocity:velocity-tools:jar:sources:1.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.velocity:velocity-tools:jar:javadoc:1.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.velocity:velocity-tools:jar:javadoc:1.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-webmvc:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'trove:trove:jar:javadoc:3.0.0rc2' in repository central (http://nexus)
+[INFO] Unable to find resource 'trove:trove:jar:sources:3.0.0rc2' in repository central (http://nexus)
+[INFO] Unable to find resource 'trove:trove:jar:javadoc:3.0.0rc2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'trove:trove:jar:sources:3.0.0rc2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'taglibs:string:jar:javadoc:1.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.axis:axis:jar:javadoc:1.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.axis:axis:jar:javadoc:1.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'taglibs:string:jar:javadoc:1.1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xml-apis:xml-apis:jar:javadoc:2.0.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.mina:mina-core:jar:javadoc:1.0.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.mina:mina-core:jar:javadoc:1.0.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xml-apis:xml-apis:jar:javadoc:2.0.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-login:jar:sources:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-login:jar:sources:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-login:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-login:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-base:jar:sources:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-base:jar:sources:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'wsdl4j:wsdl4j:jar:javadoc:1.6.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'wsdl4j:wsdl4j:jar:javadoc:1.6.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-httpclient:commons-httpclient:jar:javadoc:3.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-base:jar:javadoc:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-httpclient:commons-httpclient:jar:javadoc:3.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.infra:ext-log4j:jar:javadoc:1.0.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.infra:ext-log4j:jar:javadoc:1.0.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-base:jar:javadoc:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'taglibs:string:jar:sources:1.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'taglibs:string:jar:sources:1.1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'io.netty:netty:jar:javadoc:3.5.0.Final' in repository central (http://nexus)
+[INFO] Unable to find resource 'IKAnalyzer:IKAnalyzer:jar:sources:4.0.6' in repository central (http://nexus)
+[INFO] Unable to find resource 'IKAnalyzer:IKAnalyzer:jar:sources:4.0.6' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-context:jar:javadoc:2.5.6.SEC02' in repository central (http://nexus)
+[INFO] Unable to find resource 'asm:asm:jar:javadoc:3.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'IKAnalyzer:IKAnalyzer:jar:javadoc:4.0.6' in repository central (http://nexus)
+[INFO] Unable to find resource 'IKAnalyzer:IKAnalyzer:jar:javadoc:4.0.6' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'asm:asm:jar:javadoc:3.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-context:jar:javadoc:2.5.6.SEC02' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'io.netty:netty:jar:javadoc:3.5.0.Final' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'stax:stax:jar:javadoc:1.2.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.jruby:jruby-complete:jar:javadoc:1.6.5' in repository central (http://nexus)
+[INFO] Unable to find resource 'stax:stax:jar:javadoc:1.2.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-api:jar:javadoc:1.6.18' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.jruby:jruby-complete:jar:javadoc:1.6.5' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'kafka:kafka:jar:sources:0.7.6' in repository central (http://nexus)
+[INFO] Unable to find resource 'kafka:kafka:jar:sources:0.7.6' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'javax.servlet.jsp:jsp-api:jar:javadoc:2.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.persistence:persistence-api:jar:javadoc:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.servlet.jsp:jsp-api:jar:javadoc:2.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'kafka:kafka:jar:javadoc:0.7.6' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.persistence:persistence-api:jar:javadoc:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'kafka:kafka:jar:javadoc:0.7.6' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'stax:stax-api:jar:sources:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'stax:stax-api:jar:sources:1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.infra:hbase-client:jar:sources:1.0.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.infra:hbase-client:jar:sources:1.0.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-api:jar:javadoc:1.6.18' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.infra:hbase-client:jar:javadoc:1.0.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.infra:hbase-client:jar:javadoc:1.0.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'stax:stax-api:jar:javadoc:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-annotations:jar:javadoc:2.0.0-mdh1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-annotations:jar:javadoc:2.0.0-mdh1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'stax:stax-api:jar:javadoc:1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-annotations:jar:sources:2.0.0-mdh1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-annotations:jar:sources:2.0.0-mdh1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-common:jar:javadoc:2.0.0-mdh1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-common:jar:javadoc:2.0.0-mdh1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-validator:commons-validator:jar:javadoc:1.3.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-validator:commons-validator:jar:javadoc:1.3.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-sdk:jar:sources:0.0.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-sdk:jar:sources:0.0.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-sdk:jar:javadoc:0.0.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-sdk:jar:javadoc:0.0.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'antlr:antlr:jar:javadoc:2.7.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'antlr:antlr:jar:javadoc:2.7.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-dal:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-dal:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'cindy:cindy:jar:javadoc:2.4.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'cindy:cindy:jar:javadoc:2.4.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-core:jar:javadoc:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-core:jar:javadoc:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'cindy:cindy:jar:sources:2.4.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:messaging-api:jar:javadoc:1.0.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'cindy:cindy:jar:sources:2.4.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:messaging-api:jar:javadoc:1.0.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-core:jar:sources:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-jaxrs:jar:javadoc:1.8.8' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-core:jar:sources:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-jaxrs:jar:javadoc:1.8.8' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-mq:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-mq:jar:javadoc:2.1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.qq.open:openqq:jar:sources:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.qq.open:openqq:jar:sources:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.jcraft:jsch:jar:javadoc:0.1.42' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.jcraft:jsch:jar:javadoc:0.1.42' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.qq.open:openqq:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.qq.open:openqq:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:recommend-common:jar:javadoc:1.0.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:recommend-common:jar:javadoc:1.0.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:recommend-common:jar:sources:1.0.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:recommend-common:jar:sources:1.0.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.chenlb.mmseg4j:all:jar:sources:1.8.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'tomcat:jasper-runtime:jar:javadoc:5.5.23' in repository central (http://nexus)
+[INFO] Unable to find resource 'tomcat:jasper-runtime:jar:javadoc:5.5.23' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.chenlb.mmseg4j:all:jar:sources:1.8.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'tomcat:jasper-runtime:jar:sources:5.5.23' in repository central (http://nexus)
+[INFO] Unable to find resource 'tomcat:jasper-runtime:jar:sources:5.5.23' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'backport-util-concurrent:backport-util-concurrent:jar:javadoc:2.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-mapper-asl:jar:javadoc:1.9.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-mapper-asl:jar:javadoc:1.9.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'backport-util-concurrent:backport-util-concurrent:jar:javadoc:2.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:miliao-common:jar:javadoc:2.0.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:miliao-common:jar:javadoc:2.0.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'weibo4j:weibo4j:jar:sources:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'weibo4j:weibo4j:jar:sources:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'javax.xml:jaxrpc-api:jar:sources:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.xml:jaxrpc-api:jar:sources:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'weibo4j:weibo4j:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'weibo4j:weibo4j:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-utils:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-utils:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.chenlb.mmseg4j:all:jar:javadoc:1.8.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.chenlb.mmseg4j:all:jar:javadoc:1.8.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xerces:xercesImpl:jar:sources:2.9.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'xerces:xercesImpl:jar:javadoc:2.9.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'xerces:xercesImpl:jar:sources:2.9.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xerces:xercesImpl:jar:javadoc:2.9.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'javax.xml:jaxrpc-api:jar:javadoc:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.xml:jaxrpc-api:jar:javadoc:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.json:json:jar:sources:20090211' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.json:json:jar:sources:20090211' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.common.perfcounter:xiaomi-common-perfcounter:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.json:json:jar:javadoc:20090211' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.common.perfcounter:xiaomi-common-perfcounter:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.json:json:jar:javadoc:20090211' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xalan:serializer:jar:javadoc:2.7.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-messaging:jar:javadoc:1.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-messaging:jar:javadoc:1.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xalan:serializer:jar:javadoc:2.7.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-logger:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-logger:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xalan:serializer:jar:sources:2.7.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'xalan:serializer:jar:sources:2.7.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.infra.galaxy:galaxy-coprocessor:jar:sources:0.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.infra.galaxy:galaxy-coprocessor:jar:sources:0.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.infra.galaxy:galaxy-coprocessor:jar:javadoc:0.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.infra.galaxy:galaxy-coprocessor:jar:javadoc:0.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-thrift:jar:javadoc:2.0.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'velocity:velocity:jar:sources:1.5' in repository central (http://nexus)
+[INFO] Unable to find resource 'velocity:velocity:jar:sources:1.5' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-thrift:jar:javadoc:2.0.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'velocity:velocity:jar:javadoc:1.5' in repository central (http://nexus)
+[INFO] Unable to find resource 'velocity:velocity:jar:javadoc:1.5' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'ldys:cmpp-sdk:jar:javadoc:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'ldys:cmpp-sdk:jar:javadoc:1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.channel:thrift-fb303:jar:sources:0.5.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.channel:thrift-fb303:jar:sources:0.5.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'ldys:cmpp-sdk:jar:sources:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'ldys:cmpp-sdk:jar:sources:1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.channel:thrift-fb303:jar:javadoc:0.5.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.channel:thrift-fb303:jar:javadoc:0.5.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-security:jar:javadoc:2.0.0-mdh1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-security:jar:javadoc:2.0.0-mdh1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'net.sf.kosmosfs:kfs:jar:sources:0.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'net.sf.kosmosfs:kfs:jar:javadoc:0.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'net.sf.kosmosfs:kfs:jar:javadoc:0.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'net.sf.kosmosfs:kfs:jar:sources:0.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts-meta:jar:sources:3.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'plexus:plexus-mail-sender-api:jar:javadoc:1.0-alpha-2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts-meta:jar:sources:3.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'plexus:plexus-mail-sender-api:jar:javadoc:1.0-alpha-2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts-meta:jar:javadoc:3.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts-meta:jar:javadoc:3.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-core-asl:jar:javadoc:1.9.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-core-asl:jar:javadoc:1.9.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.thrift:thrift:jar:javadoc:0.5.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.thrift:thrift:jar:javadoc:0.5.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.thrift:thrift:jar:sources:0.5.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.thrift:thrift:jar:sources:0.5.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:cmpp:jar:sources:2.0.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:cmpp:jar:sources:2.0.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'aopalliance:aopalliance:jar:javadoc:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'aopalliance:aopalliance:jar:javadoc:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-xclient:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-xclient:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaonei.api:renren-api-client:jar:sources:1.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaonei.api:renren-api-client:jar:sources:1.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaonei.api:renren-api-client:jar:javadoc:1.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaonei.api:renren-api-client:jar:javadoc:1.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:cmpp:jar:javadoc:2.0.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:cmpp:jar:javadoc:2.0.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-configuration:commons-configuration:jar:javadoc:1.6' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-configuration:commons-configuration:jar:javadoc:1.6' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'javax.activation:activation:jar:javadoc:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'javax.activation:activation:jar:javadoc:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xstream:xstream:jar:sources:1.3.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'xstream:xstream:jar:sources:1.3.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-hotspots:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-hotspots:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.simpleframework:simple-xml:jar:javadoc:2.6.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'xstream:xstream:jar:javadoc:1.3.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'xstream:xstream:jar:javadoc:1.3.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-context-support:jar:javadoc:2.5.6.SEC01' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.simpleframework:simple-xml:jar:javadoc:2.6.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-context-support:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[WARNING] Unable to get resource 'com.renren.api.client:renren-api:jar:sources:1.0-SNAPSHOT' from repository central (http://nexus): Read timed out
+[INFO] Unable to find resource 'com.renren.api.client:renren-api:jar:sources:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[WARNING] Unable to get resource 'com.renren.api.client:renren-api:jar:javadoc:1.0-SNAPSHOT' from repository central (http://nexus): Read timed out
+[INFO] Unable to find resource 'com.baidu.openapi:baidu-api-sdk-java:jar:sources:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.renren.api.client:renren-api:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.baidu.openapi:baidu-api-sdk-java:jar:javadoc:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'dom4j:dom4j:jar:javadoc:1.6.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'dom4j:dom4j:jar:javadoc:1.6.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.baidu.openapi:baidu-api-sdk-java:jar:sources:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.baidu.openapi:baidu-api-sdk-java:jar:javadoc:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'voldemort:voldemort:jar:javadoc:0.90.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'voldemort:voldemort:jar:javadoc:0.90.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'weibo4j:weibo4j-oauth2:jar:sources:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'weibo4j:weibo4j-oauth2:jar:sources:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'voldemort:voldemort:jar:sources:0.90.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.jboss.netty:netty:jar:javadoc:3.2.7.Final' in repository central (http://nexus)
+[INFO] Unable to find resource 'weibo4j:weibo4j-oauth2:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'weibo4j:weibo4j-oauth2:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'voldemort:voldemort:jar:sources:0.90.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'net.sourceforge.java-jml:jml:jar:sources:1.0b4' in repository central (http://nexus)
+[INFO] Unable to find resource 'net.sourceforge.java-jml:jml:jar:sources:1.0b4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.jboss.netty:netty:jar:javadoc:3.2.7.Final' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'net.sourceforge.java-jml:jml:jar:javadoc:1.0b4' in repository central (http://nexus)
+[INFO] Unable to find resource 'net.sourceforge.java-jml:jml:jar:javadoc:1.0b4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring:jar:javadoc:2.5.6.SEC01' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client:jar:javadoc:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client:jar:javadoc:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client:jar:sources:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'xpp3:xpp3:jar:javadoc:1.1.3.4-RC8' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.googlecode.json-simple:json-simple:jar:javadoc:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client:jar:sources:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.googlecode.json-simple:json-simple:jar:javadoc:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xpp3:xpp3:jar:javadoc:1.1.3.4-RC8' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpmime:jar:javadoc:4.1.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpmime:jar:javadoc:4.1.3' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-web:jar:javadoc:2.5.6.SEC01' in repository central (http://nexus)
+[INFO] Unable to find resource 'oro:oro:jar:javadoc:2.0.8' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-web:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'oro:oro:jar:javadoc:2.0.8' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts:jar:sources:3.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts:jar:sources:3.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.danga:java-memcached:jar:sources:2.5.1.2-xiaomi' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.danga:java-memcached:jar:sources:2.5.1.2-xiaomi' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.mockito:mockito-all:jar:javadoc:1.8.5' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.mockito:mockito-all:jar:javadoc:1.8.5' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts:jar:javadoc:3.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.danga:java-memcached:jar:javadoc:2.5.1.2-xiaomi' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-contacts:jar:javadoc:3.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.danga:java-memcached:jar:javadoc:2.5.1.2-xiaomi' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-muc:jar:javadoc:0.0.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-muc:jar:javadoc:0.0.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'quartz:quartz:jar:javadoc:1.5.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'quartz:quartz:jar:javadoc:1.5.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'guodu.cmpp:guodu-clientsdk:jar:javadoc:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'guodu.cmpp:guodu-clientsdk:jar:javadoc:1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-common-sdk:jar:javadoc:0.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.kaixin.open:kaixinApi:jar:sources:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.kaixin.open:kaixinApi:jar:sources:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.kaixin.open:kaixinApi:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.kaixin.open:kaixinApi:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'guodu.cmpp:guodu-clientsdk:jar:sources:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'guodu.cmpp:guodu-clientsdk:jar:sources:1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-common-sdk:jar:sources:0.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-common-sdk:jar:sources:0.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'taglibs:standard:jar:javadoc:1.1.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'taglibs:standard:jar:javadoc:1.1.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'tomcat:jasper-compiler:jar:sources:5.5.23' in repository central (http://nexus)
+[INFO] Unable to find resource 'diy.cmpp:cmpp-common-sdk:jar:javadoc:0.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'tomcat:jasper-compiler:jar:sources:5.5.23' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-core:jar:javadoc:2.5.6.SEC02' in repository central (http://nexus)
+[INFO] Unable to find resource 'xalan:xalan:jar:javadoc:2.7.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.XMChannel:contactlist:jar:sources:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.XMChannel:contactlist:jar:sources:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-core:jar:javadoc:2.5.6.SEC02' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xalan:xalan:jar:javadoc:2.7.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.XMChannel:contactlist:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.XMChannel:contactlist:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'tomcat:jasper-compiler:jar:javadoc:5.5.23' in repository central (http://nexus)
+[INFO] Unable to find resource 'tomcat:jasper-compiler:jar:javadoc:5.5.23' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'classworlds:classworlds:jar:javadoc:1.1-alpha-2' in repository central (http://nexus)
+[INFO] Unable to find resource 'classworlds:classworlds:jar:sources:1.1-alpha-2' in repository central (http://nexus)
+[INFO] Unable to find resource 'classworlds:classworlds:jar:javadoc:1.1-alpha-2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:sources:5.1.20' in repository central (http://nexus)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:sources:5.1.20' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpcore:jar:javadoc:4.1.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpcore:jar:javadoc:4.1.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-beans:jar:javadoc:2.5.6.SEC02' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-beans:jar:javadoc:2.5.6.SEC02' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:javadoc:5.1.20' in repository central (http://nexus)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:javadoc:5.1.20' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'classworlds:classworlds:jar:sources:1.1-alpha-2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-beanutils:commons-beanutils-core:jar:javadoc:1.8.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-beanutils:commons-beanutils-core:jar:javadoc:1.8.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:ipWrapper:jar:sources:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:ipWrapper:jar:sources:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-beanutils:commons-beanutils-core:jar:sources:1.8.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:ipWrapper:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:ipWrapper:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-beanutils:commons-beanutils-core:jar:sources:1.8.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'xmlpull:xmlpull:jar:sources:1.1.3.4a' in repository central (http://nexus)
+[INFO] Unable to find resource 'xmlpull:xmlpull:jar:sources:1.1.3.4a' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-xc:jar:javadoc:1.8.8' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.codehaus.jackson:jackson-xc:jar:javadoc:1.8.8' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.ccil.cowan.tagsoup:tagsoup:jar:sources:1.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.ccil.cowan.tagsoup:tagsoup:jar:sources:1.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.ccil.cowan.tagsoup:tagsoup:jar:javadoc:1.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'xmlpull:xmlpull:jar:javadoc:1.1.3.4a' in repository central (http://nexus)
+[INFO] Unable to find resource 'xmlpull:xmlpull:jar:javadoc:1.1.3.4a' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'log4j:log4j:jar:javadoc:1.2.14' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hbase:hbase:jar:javadoc:0.94.3-mdh1.0.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hbase:hbase:jar:javadoc:0.94.3-mdh1.0.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.ccil.cowan.tagsoup:tagsoup:jar:javadoc:1.2' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:mfsclient:jar:sources:1.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:mfsclient:jar:sources:1.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:mfsclient:jar:javadoc:1.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:mfsclient:jar:javadoc:1.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-auth:jar:javadoc:2.0.0-mdh1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.hadoop:hadoop-auth:jar:javadoc:2.0.0-mdh1.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.miliao:miliao-serviceapi:jar:javadoc:1.1.6' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:miliao-openapi-sdk:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:miliao-openapi-sdk:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'log4j:log4j:jar:javadoc:1.2.14' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.miliao:miliao-serviceapi:jar:javadoc:1.1.6' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client-meta:jar:sources:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client-meta:jar:sources:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client-meta:jar:javadoc:1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.google.gdata:gdata-client-meta:jar:javadoc:1.0' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-web:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-messaging:jar:javadoc:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpcore:jar:javadoc:4.2.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-xclient:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-thrift:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-api:jar:javadoc:1.6.10' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.thrift:thrift:jar:javadoc:0.5.0-fix-thrift1190' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-webmvc:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-context-support:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpclient:jar:javadoc:4.2.2' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:messaging-api:jar:javadoc:1.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-utils:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-dal:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:miliao-common:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-context:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:ipWrapper:jar:sources:0.0.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-zookeeper:jar:javadoc:2.1.0' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-core:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:ipWrapper:jar:javadoc:0.0.3' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-beans:jar:javadoc:2.5.6.SEC03' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-messaging:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-messaging:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'net.paoding:paoding-rose:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'net.paoding:paoding-rose:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:miliao-common:jar:javadoc:2.0.2-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:miliao-common:jar:javadoc:2.0.2-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-common:jar:sources:0.0.8-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-common:jar:sources:0.0.8-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-common:jar:javadoc:0.0.8-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-common:jar:javadoc:0.0.8-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-jexl:commons-jexl:jar:sources:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-jexl:commons-jexl:jar:javadoc:1.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'commons-jexl:commons-jexl:jar:sources:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'commons-jexl:commons-jexl:jar:javadoc:1.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-api:jar:javadoc:1.6.12' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-thrift-api:jar:javadoc:1.6.12' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpcore:jar:javadoc:4.2.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpcore:jar:javadoc:4.2.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'net.paoding:paoding-rose-scanning:jar:javadoc:1.0-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'net.paoding:paoding-rose-scanning:jar:javadoc:1.0-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:bmw-assist:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:bmw-assist:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passportsdk:jar:javadoc:1.0.10' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passportsdk:jar:javadoc:1.0.10' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-thrift:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-mq:jar:javadoc:2.0.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-beans:jar:javadoc:2.5.6.SEC01' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-mq:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:sources:5.1.24' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-common-thrift:jar:javadoc:2.0.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-beans:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:sources:5.1.24' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-quota-interceptor:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:xiaomi-quota-interceptor:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-service-api:jar:javadoc:0.0.26-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-service-api:jar:javadoc:0.0.26-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-security:jar:sources:0.0.3-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-security:jar:sources:0.0.3-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-security:jar:javadoc:0.0.3-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-security:jar:javadoc:0.0.3-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpclient:jar:javadoc:4.2.1' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.apache.httpcomponents:httpclient:jar:javadoc:4.2.1' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-log:jar:sources:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-log:jar:sources:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:passport-log:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:passport-log:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:javadoc:5.1.24' in repository central (http://nexus)
+[INFO] Unable to find resource 'mysql:mysql-connector-java:jar:javadoc:5.1.24' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi:rose-perf:jar:javadoc:0.0.1-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi:rose-perf:jar:javadoc:0.0.1-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:sources:0.0.2-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:sources:0.0.2-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:javadoc:0.0.2-SNAPSHOT' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.miliao:accessTrack:jar:javadoc:0.0.2-SNAPSHOT' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-core:jar:javadoc:2.5.6.SEC01' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-core:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'com.xiaomi.miliao:miliao-serviceapi:jar:javadoc:1.0.4' in repository central (http://nexus)
+[INFO] Unable to find resource 'com.xiaomi.miliao:miliao-serviceapi:jar:javadoc:1.0.4' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)
+[INFO] Unable to find resource 'org.springframework:spring-context:jar:javadoc:2.5.6.SEC01' in repository central (http://nexus)
+[INFO] Unable to find resource 'org.springframework:spring-context:jar:javadoc:2.5.6.SEC01' in repository xiaomi-nexus (http://nexus.d.xiaomi.net/nexus/content/groups/public/)

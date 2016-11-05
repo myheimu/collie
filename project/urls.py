@@ -1,0 +1,38 @@
+from django.conf.urls import url, patterns
+from project import views
+from project.views import HistoryDataTableView, HistoryView
+
+
+urlpatterns = patterns('',
+                       url(r'^index', views.index, name='index'),
+                       url(r'^manage', views.manage_page, name='manage'),
+                       url(r'^delete', views.delete, name='delete'),
+                       url(r'^rename', views.rename, name='rename'),
+                       url(r'^new', views.new_project, name='edit_page'),
+                       url(r'^edit', views.edit_project, name='edit_page'),
+                       url(r'^save', views.save_project, name='save'),
+                       url(r'^detail', views.detail, name='get detail'),
+                       url(r'^download', views.download, name='download'),
+                       url(r'^permission/index', views.page_edit_permission, name='edit permission'),
+                       url(r'^permission/grant', views.grant_project_permission, name='grant project permission'),
+                       url(r'^permission/revoke', views.revoke_project_permission, name='revoke project permission'),
+                       url(r'^execution/index', views.execution_index, name='flow_execution'),
+                       url(r'^execution/pause', views.execution_pause, name='pause'),
+                       url(r'^execution/cancel', views.execution_cancel, name='cancel'),
+                       url(r'^execution/resume', views.execution_resume, name='resume'),
+                       url(r'^execution/job/index', views.execution_job_index, name='job index'),
+                       url(r'^execution/job/log', views.execution_job_log, name='job log'),
+                       url(r'^execution/diagram', views.flow_execution_diagram, name='execution diagram'),
+                       url(r'^execution/log', views.flow_execution_log, name='execution log'),
+                       url(r'^flow/index', views.flow_index, name='flow'),
+                       url(r'^flow/tree', views.flow_tree, name='get flow tree'),
+                       url(r'^flow/diagram', views.flow_diagram, name='get flow diagram'),
+                       url(r'^flow/options_execute', views.flow_execute_options, name='get flow execute options'),
+                       url(r'^flow/colliexe_nodes', views.flow_colliexe_nodes, name='get flow colliexe nodes'),
+                       url(r'^flow/execute', views.flow_execute, name='execute flow'),
+                       url(r'^flow/schedule', views.flow_schedule, name='schedule flow'),
+                       url(r'^executing/index', views.executing_page, name='executing'),
+                       url(r'^scheduled/index', views.scheduled_page, name='scheduled'),
+                       url(r'^scheduled/delete', views.scheduled_delete, name='remove scheduled'),
+                       url(r'^history/index$', HistoryView.as_view(), name='index_history'),
+                       url(r'^history/data$', HistoryDataTableView.as_view(), name="history_table"))

@@ -1,0 +1,11 @@
+.idea/
+media/
+*/*.pyc
+*.pyc
+log/
+target
+*.iml
+release/
+src
+uwsgi.log
+pip-selfcheck.json

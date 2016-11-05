@@ -1,0 +1,33 @@
+.table-without-border td {
+    border: none;
+}
+
+.activity-list li a {
+padding: 5px 10px;
+}
+
+#right-panel {
+    height: 600px;
+    margin: 0px;
+    float: right;
+}
+
+.row-fluid .span3 {
+    width: 25%;
+}
+
+.row-fluid .span9 {
+    width: 75%;
+}
+
+.custom-menu {
+    z-index:99;
+    position: absolute;
+    background-color:#C0C0C0;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.li_panel {
+    padding: 10px;
+}

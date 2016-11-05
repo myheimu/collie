@@ -1,0 +1,243 @@
+<div class="modal fade" id="executeFlowModal" tabindex="-1" role="dialog" style="display: none">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Execute Flow</h4>
+            </div>
+            <div class="modal-body" style="max-height: 1500px; overflow: hidden;" id="container-wrapper">
+                <div class="row-fluid" id="row-container">
+                    <div class="span3">
+                        <ul class="nav nav-list" id="sidebar-nav">
+                            <li class="active li_nav" id="flow_view">
+                                <a href="#">Flow View</a>
+                            </li>
+                            <li class="li_nav" id="notification">
+                                <a href="#">Notification</a>
+                            </li>
+                            <li class="li_nav" id="failure_options">
+                                <a href="#">Failure Options</a>
+                            </li>
+                            <li class="li_nav" id="concurrent">
+                                <a href="#">Concurrent</a>
+                            </li>
+                            <li class="li_nav" id="hadoop_options" style="display: none">
+                                <a href="#">Hadoop Options <span class="label label-important" id="hadoop_options_sign"><i class="icon icon-info-sign"></i></span></a>
+                            </li>
+                            <li class="li_nav" id="advanced_options">
+                                <a href="#">Advanced Options</a>
+                            </li>
+                            <!-- TODO
+                            <li class="li_nav" id="flow_parameters">
+                                <a href="#">Flow Parameters</a>
+                            </li>
+                            -->
+                        </ul>
+                    </div>
+                    <div class="span9 li_panel" id="right-panel" li_id="flow_view" style="overflow: scroll; height: 450px">
+                        <div class="execute_diagram_panel" id="execute_diagram_panel">
+                        </div>
+                    </div>
+                    <div class="span9 li_panel" id="right-panel" li_id="notification" style="display: none;">
+                        <div class="control-group">
+                            <label class="control-label"><strong>Notify On Failure</strong></label>
+                            <div class="controls">
+                                <input type="checkbox" name="radios" style="margin-right: 5px" checked="checked" id="notify_on_first_failure"/>First Failure
+                                <input type="checkbox" name="radios" style="margin-right: 5px" checked="checked" id="notify_on_last_failure"/>Flow Finished
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong>Failure Emails</strong></label>
+                            <label style="padding-left: 10px; font-size: 10px">Notify these addresses on failure. Comma ',' delimited list.</label>
+                            <textarea style="margin-top: 10px; width: 90%" id="failure_emails"></textarea>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong>Success Emails</strong></label>
+                            <label style="padding-left: 10px; font-size: 10px">Notify when the flow finishes successfully. Comma ',' delimited list.</label>
+                            <textarea style="margin-top: 10px; width: 90%" id="success_emails"></textarea>
+                        </div>
+                    </div>
+                    <div class="span9 li_panel" id="right-panel" li_id="failure_options" style="display: none">
+                        <div class="control-group">
+                            <label class="control-label"><strong>Failure Options</strong></label>
+                            <select id="failure_action">
+                                <option value="finish_currently_running"/>Finish Current Running</option>
+                                <option value="cancel_all"/>Cancel All</option>
+                                <option value="finish_all_possible" selected="selected"/>Finish All Possible</option>
+                            </select>
+                            <label style="padding-top: 20px; padding-left: 10px; font-size: 10px">
+                                When a failure first occurs in the flow, select the execution behavior.</br>
+                                <span style="padding-left: 5px"><i class="icon icon-bookmark"></i></span>
+                                <strong>Finish Current Running</strong> finishes only the currently running jobs. It will not start any new jobs.</br>
+                                <span style="padding-left: 5px"><i class="icon icon-bookmark"></i></span>
+                                <strong>Cancel All</strong> immediately kills all jobs and fails the flow.</br>
+                                <span style="padding-left: 5px"><i class="icon icon-bookmark"></i></span>
+                                <strong>Finish All Possible</strong> will keep executing jobs as long as its dependencies are met.
+                            </label>
+                        </div>
+                    </div>
+                    <div class="span9 li_panel" id="right-panel" li_id="concurrent" style="display: none">
+                        <div class="control-group">
+                            <label class="control-label"><strong>Concurrent Execution Options</strong></label>
+                            <div class="controls">
+                                <label style="padding-left: 10px; font-size: 10px">If the flow is currently running, these are the options that can be set.</label>
+                                <label>
+                                    <input type="radio" name="radios" style="margin-right: 5px" id="concurrent_option_skip"/>
+                                    Skip Execution
+                                </label>
+                                <label style="padding-left: 10px; font-size: 10px">Do not run flow if it is already running.</label>
+                                <label>
+                                    <input type="radio" name="radios" style="margin-right: 5px" id="concurrent_option_ignore" checked/>
+                                    Run Concurrently
+                                </label>
+                                <label style="padding-left: 10px; font-size: 10px">Run the flow anyways. Previous execution is unaffected.</label>
+                                <label>
+                                    <input type="radio" name="radios" style="margin-right: 5px" id="concurrent_option_pipeline"/>
+                                    Pipeline
+                                    <select id="pipeline_level">
+                                        <option value="1">Level 1</option>
+                                        <option value="2">Level 2</option>
+                                    </select>
+                                </label>
+                                <label style="padding-left: 10px; font-size: 10px">
+                                    Pipeline the flow, so the current execution will not be overrun.</br>
+                                    <span style="padding-left: 5px"><i class="icon icon-bookmark"></i></span>
+                                    Level 1: block job A until the previous flow job A has completed.</br>
+                                    <span style="padding-left: 5px"><i class="icon icon-bookmark"></i></span>
+                                    Level 2: block job A until the previous flow job A's children have completed.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span9 li_panel" id="right-panel" li_id="hadoop_options" style="display: none">
+                        <div class="control-group" id="yarn_cluster_option">
+                            <label class="control-label"><strong>Yarn Cluster</strong></label>
+                            <select id="yarn_cluster">
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label"><strong>Kerberos Key Options</strong></label>
+                            <select id="kerberos_keys">
+                                <!-- option value="None" selected="selected"/>None</option -->
+                            </select>
+                        </div>
+                        <div class="control-group" id="queue_option">
+                            <label class="control-label"><strong>Mapred Queue Options</strong></label>
+                            <input type="text" value="" class="input-big" id="queue_name" placeholder="queue name">
+                            <a class="badge badge-info" style="padding-left: 10px">required</a>
+                        </div>
+                    </div>
+                    <div class="span9 li_panel" id="right-panel" li_id="advanced_options" style="display: none">
+                        <div class="control-group" style="display: none" id="option_running_node">
+                            <label class="control-label"><strong>Running Node Options</strong></label>
+                            <select id="colliexe_nodes">
+                                <option value="-1" selected="selected"/>Random</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <a href="#" style="text-decoration: underline" id="advanced_display">Display Advanced Options</a>
+                            <a href="#" style="display: none; text-decoration: underline" id="advanced_hide">Hide Advanced Options</a>
+                        </div>
+                    </div>
+                    <!-- TODO
+                    <div class="span9 li_panel" id="right-panel" li_id="flow_parameters" style="display: none">
+                    </div>
+                    -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="flow_schedule">Schedule</button>
+                <button type="button" class="btn btn-success btn_execute" id="flow-execute">Execute</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="confirmModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="">Confirm</h4>
+            </div>
+            <div class="modal-body" style="max-height: 1500px; overflow: hidden;">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="scheduleModal" tabindex="2" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" style="overflow: hidden;">
+                <form class="form-horizontal">
+                    <div class="control-group">
+                        <h4 class="modal-title" id="">Schedule Flow Options</h4>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">Schedule Time</label>
+                        <div class="controls">
+                            <input type="text" id="schedule_time">
+
+                            <!--
+                            <input type="text" value="12" class="input-mini" id="schedule_datetime_hour">
+                            <input type="text" value="00" class="input-mini" id="schedule_datetime_minute">
+                            <select style="display: inline-block; width: 60px;" id="schedule_datetime_clock">
+                                <option value="am">am</option>
+                                <option value="pm">pm</option>
+                            </select>
+                            <select style="display: inline-block; width: 60px;" id="schedule_datetime_zone">
+                                <option value="CST">CST</option>
+                                <option value="UTC">UTC</option>
+                            </select>
+                            -->
+                        </div>
+                    </div>
+                    <!--
+                    <div class="control-group">
+                        <label class="control-label">Schedule Date</label>
+                        <div class="controls">
+                            <div  data-date="12-02-2012" class="input-append date datepicker">
+                                <input type="text" value="12-02-2012"  data-date-format="mm-dd-yyyy" id="schedule_datetime_date">
+                                <span class="add-on">
+                                    <i class="icon-th"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="control-group">
+                        <label class="control-label">Recurrence</label>
+                        <div class="controls" id="module_type">
+                            <input type="checkbox" id="schedule_recurring">
+                            <label style="display: inline; margin-right: 10px">repeat every</label>
+                            <input type="text" value="12" class="input-mini" id="schedule_period_number">
+                            <select style="display: inline-block; width: 90px;" id="schedule_period_unit">
+                                <option value="d">Days</option>
+                                <option value="h">Hours</option>
+                                <option value="m">Minutes</option>
+                                <option value="w">Weeks</option>
+                                <option value="M">Months</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="btn_run_schedule">Schedule</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="processing_fade" id="run_fade"></div>
+<div class="processing_modal" id="run_modal">
+    <img id="loader" src="{{ STATIC_URL }}img/loading.gif" />
+</div>

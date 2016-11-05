@@ -1,0 +1,28 @@
+{% extends "profile/index.html" %}
+
+{% block profile_panel %}
+    <h4>
+        Profile settings
+    </h4>
+    <label>
+        This information appears on your profile. Some options are unavailable for LDAP accounts
+    </label>
+    <hr class="split_line"/>
+
+    <form class="form-horizontal">
+        <div class="control-group">
+            <label class="control-label">Name</label>
+            <div class="controls">
+                <input type="text" value="{{ username }}" class="input-big" placeholder="name" disabled="disabled">
+                <label>name from ldap</label>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label">Email</label>
+            <div class="controls">
+                <input type="text" value="{{ username }}@xiaomi.com" class="input-big" placeholder="email" disabled="disabled">
+                <label>email of ldap</label>
+            </div>
+        </div>
+    </form>
+{% endblock %}

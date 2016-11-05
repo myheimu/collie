@@ -1,0 +1,86 @@
+{% extends "profile/index.html" %}
+
+{% block script %}
+    <script src="{{ STATIC_URL }}js/profile/kerberos.js"></script>
+{% endblock %}
+
+{% block profile_panel %}
+    <div class="row-fluid">
+        <div class="span6">
+            <h4>
+                My Kerberos keys
+            </h4>
+            <label>
+                Kerberos keys allow you to submit job on hadoop
+            </label>
+        </div>
+        <div class="span6">
+            <a class="btn btn-success" style="margin-top: 40px; float: right;" data-toggle="modal" data-target="#newKerberosKey">New Key</a>
+        </div>
+    </div>
+    <hr class="split_line"/>
+
+    <form class="form-horizontal">
+        <div class="widget-box">
+            <div class="widget-title"><span class="icon"> <i class="icon-file"></i> </span>
+                <h5>Kerberos Keys</h5>
+            </div>
+            <div class="widget-content nopadding">
+                <ul class="profile_list">
+                    {% for kerberos_key in keys %}
+                    <li>
+                        <div>
+                            <div class="fr">
+                                <a href="#" class="btn btn-danger btn-mini btn_delete" key_name="{{ kerberos_key.name }}">Delete</a>
+                            </div>
+                            <p>
+                                <a href="#">
+                                    {{ kerberos_key.name }}
+                                </a>
+                            </p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </form>
+
+    <div class="modal fade" id="newKerberosKey" tabindex="-1" role="dialog" style="display: none">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="">New Kerberos Key</h4>
+                </div>
+                <div class="modal-body" style="max-height: 1500px; overflow: hidden;">
+                    <form class="form-horizontal">
+                        <div class="control-group">
+                            <label class="control-label">Key Name</label>
+                            <div class="controls">
+                                <input type="text" value="" class="input-big" id="key_name" placeholder="name of key">
+                                <label>required</label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">File upload</label>
+                            <div class="controls">
+                                <input type="file" accept=".keytab" name="fileToUpload" id="fileToUpload" onchange="fileSelected();"/>
+                                <div id="fileName"></div>
+                                <div id="fileSize"></div>
+                                <div id="fileType"></div>
+                                <input class="btn" type="button" onclick="uploadFile()" value="Upload" />
+                                <div id="progressNumber"></div>
+                                <div id="uploadResult"></div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button submit" class="btn btn-primary" id="btn_save">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

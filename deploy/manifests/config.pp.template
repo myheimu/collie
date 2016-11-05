@@ -1,0 +1,39 @@
+class base {
+    $basedir = "$<path>"
+    $pkg_dir = "$<pkg_dir>"
+    $user = "$< user >"
+    $mod_ver = "$< version >"
+    $mod_name = "$< name >"
+    $tag = "$< tag >"
+
+    $job = regsubst($tag,'^.*_?job\.([a-zA-Z0-9\-]+)_?.*$','\1')
+    $log_base = "/home/work/log/${job}"
+
+    # app running control
+    $mod_start = "sh collie_start.sh"
+    $mod_pid_cmd = "source bin/activate && which uwsgi | xargs -i lsof {} | grep -v PID | tail -1 | awk '{print \$2}'"
+    $mod_stop = "sh collie_stop.sh"
+
+    $mod_proc_log = ["${log_base}/${job}.log", "${log_base}/${job}.stdout.log", "${log_base}/${job}.stderr.log" ]
+    $mod_run_log = "${log_base}/${job}.run.log"
+
+    $run_dir="${basedir}/"
+    $to_email = "wenghaibin@xiaomi.com;zhangjiamian@xiaomi.com"
+}
+
+class production-sd inherits base{
+}
+
+class production-lg inherits base{
+}
+
+class production-hh inherits base{
+}
+
+class staging inherits base{
+}
+
+class onebox inherits base{
+}
+
+class config inherits $<env> {}

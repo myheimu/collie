@@ -1,0 +1,14 @@
+- model: core.TreeNode
+  pk: 1
+  fields:
+    name: root
+    creator_name: admin
+    parent_id: 0
+    # children_ids:
+    permission_code: rwrwr-
+    permission_group: admin
+    type: 1
+    description: the root node
+    status: 1
+    create_time: 2013-12-01T00:00:00+00:00
+    modify_time: 2013-12-01T17:41:28+00:00
